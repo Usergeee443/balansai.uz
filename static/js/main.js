@@ -93,3 +93,84 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     });
 });
+
+// Button hover wave effect
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function(e) {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('span');
+            ripple.style.cssText = `
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                animation: ripple 0.6s ease-out;
+            `;
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            button.style.position = 'relative';
+            button.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+});
+
+// Add ripple animation CSS dynamically
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Parallax effect for hero section
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const heroSection = document.querySelector('.hero-gradient');
+
+    if (heroSection && scrolled < window.innerHeight) {
+        heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroSection.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+    }
+});
+
+// Card tilt effect on hover
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+        });
+    });
+});

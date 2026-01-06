@@ -6,17 +6,17 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
+<section class="relative hero-gradient py-24 md:py-40 overflow-hidden">
     <div class="container">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 fade-on-scroll">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-8 fade-on-scroll leading-tight">
                 AI yordamchi
                 <span class="gradient-text">biznesingiz</span> uchun
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-on-scroll stagger-1">
+            <p class="text-xl md:text-2xl text-gray-700 mb-10 fade-on-scroll stagger-1 max-w-3xl mx-auto leading-relaxed">
                 Balans AI - daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes boshqaruvini avtomatlashtirishga yordam beradi.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-on-scroll stagger-2">
+            <div class="flex flex-col sm:flex-row gap-5 justify-center fade-on-scroll stagger-2">
                 <a href="{{ url_for('pricing') }}" class="btn btn-primary btn-large">
                     Bepul boshlash
                 </a>
@@ -361,19 +361,19 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section bg-gradient-to-br from-primary to-primary-dark text-white">
+<section class="section accent-gradient text-white">
     <div class="container text-center max-w-3xl fade-on-scroll">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
             Biznesingizni yangi bosqichga olib chiqishga tayyormisiz?
         </h2>
-        <p class="text-xl mb-8 text-white/90">
+        <p class="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed">
             Bugun bepul boshlang va Balans AI ning qudratini his qiling
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ url_for('pricing') }}" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors">
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="{{ url_for('pricing') }}" class="bg-white text-primary hover:bg-gray-100 px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105">
                 Bepul boshlash
             </a>
-            <a href="{{ url_for('contact') }}" class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-medium transition-colors">
+            <a href="{{ url_for('contact') }}" class="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105">
                 Bog'lanish
             </a>
         </div>
