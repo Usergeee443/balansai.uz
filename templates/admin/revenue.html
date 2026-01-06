@@ -1,0 +1,77 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}Daromadlar{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900">Daromadlar</h1>
+    <p class="text-gray-600 mt-2">To'lovlar va daromadlar statistikasi</p>
+</div>
+
+<!-- Revenue Table -->
+<div class="bg-white rounded-lg shadow overflow-hidden">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Foydalanuvchi</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Summa</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tarif</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Usul</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sana</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            {% for payment in payments %}
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ payment[0] }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">User #{{ payment[1] }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ "{:,.0f}".format(payment[2]) }} so'm
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
+                        {% if payment[3] == 'premium' %}bg-purple-100 text-purple-800
+                        {% elif payment[3] == 'basic' %}bg-blue-100 text-blue-800
+                        {% else %}bg-gray-100 text-gray-800{% endif %}">
+                        {{ payment[3]|upper }}
+                    </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {{ payment[4]|upper if payment[4] else '-' }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    {% if payment[5] == 'completed' %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        To'langan
+                    </span>
+                    {% elif payment[5] == 'pending' %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                        Kutilmoqda
+                    </span>
+                    {% elif payment[5] == 'failed' %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                        Xatolik
+                    </span>
+                    {% else %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                        {{ payment[5]|capitalize }}
+                    </span>
+                    {% endif %}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {{ payment[7].strftime('%d.%m.%Y %H:%M') if payment[7] else '-' }}
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7" class="px-6 py-4 text-center text-gray-500">
+                    Hozircha to'lovlar yo'q
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

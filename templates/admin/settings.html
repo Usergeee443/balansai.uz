@@ -1,0 +1,63 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}Sozlamalar{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900">Sozlamalar</h1>
+    <p class="text-gray-600 mt-2">Sayt sozlamalarini tahrirlash</p>
+</div>
+
+<form method="POST" class="max-w-4xl">
+    <!-- Site Settings -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-6">Sayt sozlamalari</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for setting in settings %}
+                {% if setting[1] in ['site_title', 'site_description', 'contact_email', 'telegram_link', 'phone_number'] %}
+                <div>
+                    <label for="{{ setting[1] }}" class="form-label">{{ setting[3] }}</label>
+                    <input
+                        type="text"
+                        id="{{ setting[1] }}"
+                        name="{{ setting[1] }}"
+                        value="{{ setting[2] }}"
+                        class="form-input"
+                    >
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Pricing Settings -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-6">Tariflar narxlari</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {% for setting in settings %}
+                {% if setting[1] in ['free_plan_price', 'basic_plan_price', 'premium_plan_price'] %}
+                <div>
+                    <label for="{{ setting[1] }}" class="form-label">{{ setting[3] }}</label>
+                    <input
+                        type="number"
+                        id="{{ setting[1] }}"
+                        name="{{ setting[1] }}"
+                        value="{{ setting[2] }}"
+                        class="form-input"
+                    >
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="flex justify-end">
+        <button type="submit" class="btn btn-primary">
+            Saqlash
+        </button>
+    </div>
+</form>
+{% endblock %}

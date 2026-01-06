@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Tez-tez beriladigan savollar - BalansAI.uz{% endblock %}
+{% block description %}Balans AI haqida tez-tez beriladigan savollarga javoblar. Xavfsizlik, narxlar, texnik yordam va boshqa savollar.{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-gray-50 to-white py-20">
+    <div class="container">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-on-scroll">
+                Tez-tez beriladigan savollar
+            </h1>
+            <p class="text-xl text-gray-600 fade-on-scroll stagger-1">
+                Balans AI haqida eng ko'p beriladigan savollarga javoblar
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Categories -->
+<section class="section bg-white">
+    <div class="container max-w-4xl">
+        <!-- General -->
+        <div class="mb-12 fade-on-scroll">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Umumiy savollar</h2>
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Balans AI nima?</h3>
+                    <p class="text-gray-600">
+                        Balans AI - bu sun'iy intellekt texnologiyasiga asoslangan biznes yordamchi. U sizning daromad va xarajatlaringizni tahlil qiladi, moliyaviy rejalashtirish va biznes boshqaruvida yordam beradi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Balans AI kimlar uchun mo'ljallangan?</h3>
+                    <p class="text-gray-600">
+                        Balans AI barcha biznes egalari, tadbirkorlar, startuplar, kichik va o'rta bizneslar uchun mo'ljallangan. Agar siz biznes yuritayotgan bo'lsangiz va moliyaviy tahlil va rejalashtirish kerak bo'lsa, Balans AI sizga yordam beradi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qanday ishlaydi?</h3>
+                    <p class="text-gray-600">
+                        Juda oddiy: ro'yxatdan o'ting, biznesingiz haqida ma'lumot kiriting va AI avtomatik tahlil qiladi. AI sizga savollar beradi, tavsiyalar beradi va real vaqtda biznes holatini ko'rsatib turadi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qancha vaqt kerak bo'ladi?</h3>
+                    <p class="text-gray-600">
+                        Ro'yxatdan o'tish va asosiy sozlash 5-10 daqiqa vaqt oladi. Keyinchalik esa kuniga 2-3 daqiqa ma'lumot kiritish kifoya.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security -->
+        <div class="mb-12 fade-on-scroll">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Xavfsizlik</h2>
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Ma'lumotlarim xavfsizmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, 100% xavfsiz. Barcha ma'lumotlar bank darajasidagi shifrlash bilan saqlanadi. Bizda SSL sertifikati va zamonaviy xavfsizlik texnologiyalari mavjud.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">AI qanday ma'lumotlardan foydalanadi?</h3>
+                    <p class="text-gray-600">
+                        AI faqat siz kiritgan biznes ma'lumotlaridan (daromad, xarajat, kategoriyalar) foydalanadi. Shaxsiy ma'lumotlaringiz maxfiy saqlanadi va hech kimga berilmaydi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Ma'lumotlarim uchinchi shaxslarga beriladimi?</h3>
+                    <p class="text-gray-600">
+                        Yo'q, hech qachon. Sizning ma'lumotlaringiz faqat sizga tegishli va biz uni hech kimga sotmaymiz yoki bermaymiz.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Ma'lumotlarimni o'chirish mumkinmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, istalgan vaqt akkauntingizni va barcha ma'lumotlaringizni butunlay o'chirishingiz mumkin. Bu jarayon qaytarib bo'lmaydi.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="mb-12 fade-on-scroll">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Narxlar va to'lovlar</h2>
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qancha turadi?</h3>
+                    <p class="text-gray-600">
+                        Bizda 3 ta tarif bor: Free (0 so'm), Basic (99,000 so'm/oy) va Premium (299,000 so'm/oy). Har bir tarif turli imkoniyatlar bilan keladi. Batafsil <a href="{{ url_for('pricing') }}" class="text-primary hover:underline">Tariflar</a> sahifasida.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qanday to'lov qilaman?</h3>
+                    <p class="text-gray-600">
+                        Payme, Click, Uzum, Humo va boshqa mashhur O'zbekiston to'lov tizimlarini qabul qilamiz. To'lov xavfsiz va bir necha soniyada amalga oshadi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Bepul sinov davri bormi?</h3>
+                    <p class="text-gray-600">
+                        Ha, barcha pullik tariflar uchun 7 kunlik bepul sinov davri mavjud. Bu davrda hech qanday to'lov talab qilinmaydi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Istalgan vaqt bekor qilish mumkinmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, istalgan vaqt tarifni bekor qilishingiz mumkin. Hisobingiz joriy to'lov davrining oxirigacha faol bo'ladi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Tarifni o'zgartirish mumkinmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, istalgan vaqt tarifni yuqoriga yoki pastga o'zgartirishingiz mumkin. Narx farqi keyingi to'lovda hisobga olinadi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Chegirma bormi?</h3>
+                    <p class="text-gray-600">
+                        Ha! 6 oylik to'lov uchun 10%, yillik to'lov uchun 20% chegirma beramiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical -->
+        <div class="mb-12 fade-on-scroll">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Texnik savollar</h2>
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qanday qurilmalarda ishlaydi?</h3>
+                    <p class="text-gray-600">
+                        Balans AI veb-platforma bo'lgani uchun har qanday qurilmada ishlaydi: kompyuter, planshet, smartfon. Faqat internet va brauzer kerak.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Mobil ilova bormi?</h3>
+                    <p class="text-gray-600">
+                        Hozircha yo'q, lekin saytimiz mobil qurilmalar uchun to'liq optimallashtirilgan. Mobil ilova yaqin kelajakda chiqadi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qanday tillarda ishlaydi?</h3>
+                    <p class="text-gray-600">
+                        Hozirda o'zbek va rus tillarida qo'llab-quvvatlanadi. Ingliz tili ham yaqinda qo'shiladi.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Ma'lumotlarni import qilish mumkinmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, Excel yoki CSV formatdagi ma'lumotlarni import qilishingiz mumkin. Bu jarayon juda oson va tez.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Ma'lumotlarni eksport qilish mumkinmi?</h3>
+                    <p class="text-gray-600">
+                        Ha, istalgan vaqt ma'lumotlaringizni PDF yoki Excel formatida yuklab olishingiz mumkin.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div class="mb-12 fade-on-scroll">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Qo'llab-quvvatlash</h2>
+            <div class="space-y-4">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Yordam kerak bo'lsa qayerga murojaat qilaman?</h3>
+                    <p class="text-gray-600">
+                        Email (info@balansai.uz), Telegram (@balansai) yoki saytdagi kontakt forma orqali murojaat qilishingiz mumkin. Biz tez javob beramiz.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Qo'llab-quvvatlash soatlari qanday?</h3>
+                    <p class="text-gray-600">
+                        Free va Basic foydalanuvchilar uchun: 9:00-18:00 (ish kunlari). Premium foydalanuvchilar uchun: 24/7 priority qo'llab-quvvatlash.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">O'quv materiallari bormi?</h3>
+                    <p class="text-gray-600">
+                        Ha, bizda batafsil video qo'llanmalar, blog maqolalar va FAQ bo'limi mavjud. Barcha foydalanuvchilar uchun bepul.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-3">Muammo yuzaga kelsa nima qilaman?</h3>
+                    <p class="text-gray-600">
+                        Darhol bizga xabar bering. Biz barcha muammolarni tez hal qilishga harakat qilamiz va kerak bo'lsa kompensatsiya beramiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-gradient-to-br from-primary to-primary-dark text-white">
+    <div class="container text-center max-w-3xl fade-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Javob topilmadimi?
+        </h2>
+        <p class="text-xl mb-8 text-white/90">
+            Bizga savol yuboring va biz sizga yordam beramiz
+        </p>
+        <a href="{{ url_for('contact') }}" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-medium inline-block transition-colors">
+            Savol berish
+        </a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="{{ url_for('index') }}" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-xl font-bold text-gray-900">Balans<span class="text-primary">AI</span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <a href="{{ url_for('index') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'index' %}text-primary font-medium{% endif %}">
+                    Bosh sahifa
+                </a>
+                <a href="{{ url_for('about') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'about' %}text-primary font-medium{% endif %}">
+                    Haqida
+                </a>
+                <a href="{{ url_for('features') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'features' %}text-primary font-medium{% endif %}">
+                    Imkoniyatlar
+                </a>
+                <a href="{{ url_for('pricing') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'pricing' %}text-primary font-medium{% endif %}">
+                    Tariflar
+                </a>
+                <a href="{{ url_for('faq') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'faq' %}text-primary font-medium{% endif %}">
+                    FAQ
+                </a>
+                <a href="{{ url_for('contact') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'contact' %}text-primary font-medium{% endif %}">
+                    Aloqa
+                </a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#" class="btn btn-primary">
+                    Boshlash
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div class="flex flex-col space-y-4">
+                <a href="{{ url_for('index') }}" class="text-gray-700 hover:text-primary transition-colors">Bosh sahifa</a>
+                <a href="{{ url_for('about') }}" class="text-gray-700 hover:text-primary transition-colors">Haqida</a>
+                <a href="{{ url_for('features') }}" class="text-gray-700 hover:text-primary transition-colors">Imkoniyatlar</a>
+                <a href="{{ url_for('pricing') }}" class="text-gray-700 hover:text-primary transition-colors">Tariflar</a>
+                <a href="{{ url_for('faq') }}" class="text-gray-700 hover:text-primary transition-colors">FAQ</a>
+                <a href="{{ url_for('contact') }}" class="text-gray-700 hover:text-primary transition-colors">Aloqa</a>
+                <a href="#" class="btn btn-primary">Boshlash</a>
+            </div>
+        </div>
+    </div>
+</nav>

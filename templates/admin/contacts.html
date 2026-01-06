@@ -1,0 +1,58 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}Xabarlar{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900">Xabarlar</h1>
+    <p class="text-gray-600 mt-2">Kontakt forma orqali yuborilgan xabarlar</p>
+</div>
+
+<!-- Contacts Table -->
+<div class="bg-white rounded-lg shadow overflow-hidden">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ism</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Xabar</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sana</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            {% for contact in contacts %}
+            <tr class="{% if not contact[4] %}bg-blue-50{% endif %}">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ contact[0] }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ contact[1] }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ contact[2] }}</td>
+                <td class="px-6 py-4 text-sm text-gray-900">
+                    <div class="max-w-xs truncate">{{ contact[3] }}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    {% if contact[4] %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                        O'qilgan
+                    </span>
+                    {% else %}
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                        Yangi
+                    </span>
+                    {% endif %}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {{ contact[5].strftime('%d.%m.%Y %H:%M') if contact[5] else '-' }}
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" class="px-6 py-4 text-center text-gray-500">
+                    Hozircha xabarlar yo'q
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

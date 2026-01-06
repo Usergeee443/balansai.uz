@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}BalansAI.uz - AI yordamchi biznesingiz uchun{% endblock %}</title>
+    <meta name="description" content="{% block description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi. Daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes boshqaruvini avtomatlashtirishga yordam beradi.{% endblock %}">
+    <meta name="keywords" content="Balans AI, AI yordamchi, biznes AI, moliyaviy AI, O'zbekiston AI, biznes tahlil, daromad tahlili">
+    <meta name="author" content="BalansAI.uz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.url }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="{% block og_title %}BalansAI.uz - AI yordamchi biznesingiz uchun{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi{% endblock %}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/og-image.jpg', _external=True) }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.url }}">
+    <meta property="twitter:title" content="{% block twitter_title %}BalansAI.uz{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}AI yordamchi biznesingiz uchun{% endblock %}">
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/og-image.jpg', _external=True) }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        'primary-dark': '#1e40af',
+                        'balans-black': '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    {% include 'components/navbar.html' %}
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="fixed top-20 right-4 z-50 space-y-2">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} shadow-lg max-w-md">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% include 'components/footer.html' %}
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
