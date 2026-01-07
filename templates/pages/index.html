@@ -5,57 +5,77 @@
 
 {% block content %}
 
-<!-- Hero Section -->
+<!-- Hero Section with 3D Elements -->
 <section class="relative hero-gradient py-24 md:py-40 overflow-hidden">
     <div class="container">
-        <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-8 fade-on-scroll leading-tight">
-                AI yordamchi
-                <span class="gradient-text">biznesingiz</span> uchun
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mb-10 fade-on-scroll stagger-1 max-w-3xl mx-auto leading-relaxed">
-                Balans AI - daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes boshqaruvini avtomatlashtirishga yordam beradi.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center fade-on-scroll stagger-2">
-                <a href="{{ url_for('pricing') }}" class="btn btn-primary btn-large">
-                    Bepul boshlash
-                </a>
-                <a href="{{ url_for('features') }}" class="btn btn-secondary btn-large">
-                    Imkoniyatlar
-                </a>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left Side: Text Content -->
+            <div class="reveal-slide-left">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-8 leading-tight">
+                    AI yordamchi
+                    <span class="gradient-text">biznesingiz</span> uchun
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed reveal-fade reveal-stagger-1">
+                    Balans AI - daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes boshqaruvini avtomatlashtirishga yordam beradi.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 reveal-scale reveal-stagger-2">
+                    <a href="{{ url_for('pricing') }}" class="btn btn-primary btn-large btn-magnetic glow-effect">
+                        Bepul boshlash
+                    </a>
+                    <a href="{{ url_for('features') }}" class="btn btn-secondary btn-large btn-magnetic">
+                        Imkoniyatlar
+                    </a>
+                </div>
             </div>
 
-            <!-- Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 fade-on-scroll stagger-3">
-                <div class="text-center">
-                    <div class="text-4xl font-bold text-primary mb-2">1000+</div>
-                    <div class="text-gray-600">Faol foydalanuvchilar</div>
+            <!-- Right Side: 3D Icon Placeholder -->
+            <div class="reveal-slide-right reveal-stagger-1">
+                <div class="icon-3d-container">
+                    <div class="icon-3d float-3d shimmer-3d">
+                        <!-- Placeholder for 3D Image/Icon -->
+                        <div class="text-white text-center p-8">
+                            <svg class="w-32 h-32 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                            <p class="text-lg font-bold">3D Icon Joy</p>
+                            <p class="text-sm opacity-80 mt-2">Bu yerga 3D rasm yoki icon qo'ying</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold text-primary mb-2">24/7</div>
-                    <div class="text-gray-600">AI yordamchi</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold text-primary mb-2">99.9%</div>
-                    <div class="text-gray-600">Ishlash vaqti</div>
-                </div>
+            </div>
+        </div>
+
+        <!-- Stats with improved animations -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+            <div class="text-center reveal-scale">
+                <div class="text-4xl font-bold text-primary mb-2 morph-background bg-clip-text text-transparent">1000+</div>
+                <div class="text-gray-600">Faol foydalanuvchilar</div>
+            </div>
+            <div class="text-center reveal-scale reveal-stagger-1">
+                <div class="text-4xl font-bold text-primary mb-2 morph-background bg-clip-text text-transparent">24/7</div>
+                <div class="text-gray-600">AI yordamchi</div>
+            </div>
+            <div class="text-center reveal-scale reveal-stagger-2">
+                <div class="text-4xl font-bold text-primary mb-2 morph-background bg-clip-text text-transparent">99.9%</div>
+                <div class="text-gray-600">Ishlash vaqti</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Value Proposition -->
-<section class="section bg-white">
+<!-- Value Proposition with 3D Cards -->
+<section class="section bg-white slide-over-section">
     <div class="container">
-        <div class="text-center mb-16 fade-on-scroll">
+        <div class="text-center mb-16 reveal-fade">
             <h2 class="section-title">Nima uchun Balans AI?</h2>
             <p class="section-subtitle">Biznesingizni yangi bosqichga olib chiqing</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card text-center fade-on-scroll">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card card-3d text-center reveal-scale">
+                <div class="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-6 float-3d">
+                    <!-- 3D Icon Placeholder 1 -->
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
@@ -65,9 +85,10 @@
                 </p>
             </div>
 
-            <div class="card text-center fade-on-scroll stagger-1">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card card-3d text-center reveal-scale reveal-stagger-1">
+                <div class="w-24 h-24 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 float-3d">
+                    <!-- 3D Icon Placeholder 2 -->
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                 </div>
@@ -77,9 +98,10 @@
                 </p>
             </div>
 
-            <div class="card text-center fade-on-scroll stagger-2">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="card card-3d text-center reveal-scale reveal-stagger-2">
+                <div class="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-6 float-3d">
+                    <!-- 3D Icon Placeholder 3 -->
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                     </svg>
                 </div>
@@ -92,19 +114,21 @@
     </div>
 </section>
 
-<!-- Features Preview -->
-<section class="section bg-gray-50">
+<!-- Features Preview with Sticky Scroll -->
+<section class="sticky-section bg-gradient-to-br from-gray-50 to-white">
     <div class="container">
-        <div class="text-center mb-16 fade-on-scroll">
+        <div class="text-center mb-16 reveal-fade">
             <h2 class="section-title">Asosiy imkoniyatlar</h2>
             <p class="section-subtitle">Balans AI sizga nima beradi?</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 fade-on-scroll">
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Features List with Stagger Animation -->
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4 reveal-slide-left">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0 float-3d">
+                        <!-- 3D Icon Placeholder -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
@@ -114,9 +138,10 @@
                     </div>
                 </div>
 
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-start space-x-4 reveal-slide-left reveal-stagger-1">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center flex-shrink-0 float-3d">
+                        <!-- 3D Icon Placeholder -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
@@ -126,9 +151,10 @@
                     </div>
                 </div>
 
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-start space-x-4 reveal-slide-left reveal-stagger-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0 float-3d">
+                        <!-- 3D Icon Placeholder -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
@@ -138,9 +164,10 @@
                     </div>
                 </div>
 
-                <div class="flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-start space-x-4 reveal-slide-left reveal-stagger-3">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center flex-shrink-0 float-3d">
+                        <!-- 3D Icon Placeholder -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                         </svg>
                     </div>
@@ -151,35 +178,61 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-8 fade-on-scroll stagger-1">
-                <div class="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
-                    <svg class="w-24 h-24 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
+            <!-- Large 3D Placeholder with Image Zoom -->
+            <div class="reveal-slide-right reveal-stagger-1">
+                <div class="image-zoom-container bg-white rounded-3xl shadow-2xl p-8">
+                    <div class="image-zoom icon-3d-container">
+                        <div class="aspect-video bg-gradient-to-br from-primary/20 via-accent/10 to-primary/5 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <!-- Large 3D Image Placeholder -->
+                            <div class="text-center z-10 relative">
+                                <svg class="w-32 h-32 mx-auto text-primary mb-4 float-3d" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                                <p class="text-xl font-bold text-primary">Katta 3D Rasm</p>
+                                <p class="text-sm text-gray-600 mt-2">Bu yerga dashboard yoki 3D visualization qo'ying</p>
+                            </div>
+
+                            <!-- Background Pattern -->
+                            <div class="absolute inset-0 opacity-10">
+                                <div class="grid grid-cols-6 h-full">
+                                    <div class="border-r border-primary"></div>
+                                    <div class="border-r border-primary"></div>
+                                    <div class="border-r border-primary"></div>
+                                    <div class="border-r border-primary"></div>
+                                    <div class="border-r border-primary"></div>
+                                    <div class="border-r border-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-12 fade-on-scroll">
-            <a href="{{ url_for('features') }}" class="btn btn-primary btn-large">
+        <div class="text-center mt-12 reveal-fade reveal-stagger-2">
+            <a href="{{ url_for('features') }}" class="btn btn-primary btn-large btn-magnetic glow-effect">
                 Barcha imkoniyatlarni ko'rish
             </a>
         </div>
     </div>
 </section>
 
-<!-- How it Works -->
-<section class="section bg-white">
+<!-- How it Works with Slide-Over Effect -->
+<section class="section bg-white slide-over-section">
     <div class="container">
-        <div class="text-center mb-16 fade-on-scroll">
+        <div class="text-center mb-16 reveal-fade">
             <h2 class="section-title">Qanday ishlaydi?</h2>
             <p class="section-subtitle">3 ta oddiy qadam</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center fade-on-scroll">
-                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
-                    1
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center reveal-rotate">
+                <div class="w-32 h-32 bg-gradient-to-br from-primary to-accent text-white rounded-3xl flex items-center justify-center text-4xl font-bold mx-auto mb-6 float-3d shadow-2xl">
+                    <!-- 3D Icon Placeholder for Step 1 -->
+                    <span class="relative">
+                        1
+                        <div class="absolute -inset-4 bg-primary/20 rounded-full blur-xl"></div>
+                    </span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Ro'yxatdan o'ting</h3>
                 <p class="text-gray-600">
@@ -187,9 +240,13 @@
                 </p>
             </div>
 
-            <div class="text-center fade-on-scroll stagger-1">
-                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
-                    2
+            <div class="text-center reveal-rotate reveal-stagger-1">
+                <div class="w-32 h-32 bg-gradient-to-br from-accent to-primary text-white rounded-3xl flex items-center justify-center text-4xl font-bold mx-auto mb-6 float-3d shadow-2xl">
+                    <!-- 3D Icon Placeholder for Step 2 -->
+                    <span class="relative">
+                        2
+                        <div class="absolute -inset-4 bg-accent/20 rounded-full blur-xl"></div>
+                    </span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Ma'lumot kiriting</h3>
                 <p class="text-gray-600">
@@ -197,9 +254,13 @@
                 </p>
             </div>
 
-            <div class="text-center fade-on-scroll stagger-2">
-                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
-                    3
+            <div class="text-center reveal-rotate reveal-stagger-2">
+                <div class="w-32 h-32 bg-gradient-to-br from-primary to-accent text-white rounded-3xl flex items-center justify-center text-4xl font-bold mx-auto mb-6 float-3d shadow-2xl">
+                    <!-- 3D Icon Placeholder for Step 3 -->
+                    <span class="relative">
+                        3
+                        <div class="absolute -inset-4 bg-primary/20 rounded-full blur-xl"></div>
+                    </span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">AI dan foydalaning</h3>
                 <p class="text-gray-600">
@@ -210,17 +271,17 @@
     </div>
 </section>
 
-<!-- Pricing Preview -->
-<section class="section bg-gray-50">
+<!-- Pricing Preview with Sticky Effect -->
+<section class="sticky-section bg-gradient-to-br from-gray-50 to-white">
     <div class="container">
-        <div class="text-center mb-16 fade-on-scroll">
+        <div class="text-center mb-16 reveal-fade">
             <h2 class="section-title">O'zingizga mos tarifni tanlang</h2>
             <p class="section-subtitle">Har qanday biznes uchun mos tarif</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <!-- Free Plan -->
-            <div class="card fade-on-scroll">
+            <div class="card card-3d reveal-scale">
                 <div class="text-center">
                     <h3 class="text-xl font-bold mb-2">Free</h3>
                     <div class="text-4xl font-bold mb-1">0 so'm</div>
@@ -250,7 +311,7 @@
             </div>
 
             <!-- Basic Plan -->
-            <div class="card border-2 border-primary relative fade-on-scroll stagger-1">
+            <div class="card card-3d border-2 border-primary relative reveal-scale reveal-stagger-1 glow-effect">
                 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
                     Mashhur
                 </div>
@@ -283,7 +344,7 @@
             </div>
 
             <!-- Premium Plan -->
-            <div class="card fade-on-scroll stagger-2">
+            <div class="card card-3d reveal-scale reveal-stagger-2">
                 <div class="text-center">
                     <h3 class="text-xl font-bold mb-2">Premium</h3>
                     <div class="text-4xl font-bold mb-1">299,000 so'm</div>
@@ -321,30 +382,30 @@
     </div>
 </section>
 
-<!-- FAQ Preview -->
-<section class="section bg-white">
+<!-- FAQ Preview with Slide-Over -->
+<section class="section bg-white slide-over-section">
     <div class="container max-w-3xl">
-        <div class="text-center mb-16 fade-on-scroll">
+        <div class="text-center mb-16 reveal-fade">
             <h2 class="section-title">Tez-tez beriladigan savollar</h2>
             <p class="section-subtitle">Eng ko'p beriladigan savollarga javoblar</p>
         </div>
 
         <div class="space-y-4">
-            <div class="card fade-on-scroll">
+            <div class="card card-3d reveal-slide-left">
                 <h3 class="font-bold text-lg mb-2">Balans AI xavfsizmi?</h3>
                 <p class="text-gray-600">
                     Ha, Balans AI to'liq xavfsiz. Sizning barcha ma'lumotlaringiz shifrlangan holda saqlanadi va hech kimga berilmaydi.
                 </p>
             </div>
 
-            <div class="card fade-on-scroll stagger-1">
+            <div class="card card-3d reveal-slide-right reveal-stagger-1">
                 <h3 class="font-bold text-lg mb-2">Qanday to'lovlarni qabul qilasizlar?</h3>
                 <p class="text-gray-600">
                     Biz Payme, Click, Uzum va boshqa mashhur to'lov tizimlarini qabul qilamiz.
                 </p>
             </div>
 
-            <div class="card fade-on-scroll stagger-2">
+            <div class="card card-3d reveal-slide-left reveal-stagger-2">
                 <h3 class="font-bold text-lg mb-2">AI qanday ma'lumotlardan foydalanadi?</h3>
                 <p class="text-gray-600">
                     AI faqat siz kiritgan biznes ma'lumotlaridan foydalanadi. Sizning shaxsiy ma'lumotlaringiz xavfsiz saqlanadi.
@@ -352,30 +413,61 @@
             </div>
         </div>
 
-        <div class="text-center mt-8 fade-on-scroll">
-            <a href="{{ url_for('faq') }}" class="text-primary hover:underline font-medium">
+        <div class="text-center mt-8 reveal-fade reveal-stagger-3">
+            <a href="{{ url_for('faq') }}" class="text-primary hover:underline font-medium text-lg">
                 Barcha savollar →
             </a>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="section accent-gradient text-white">
-    <div class="container text-center max-w-3xl fade-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+<!-- CTA Section with Morphing Background -->
+<section class="section morph-background text-white relative overflow-hidden slide-over-section">
+    <!-- Parallax Background Elements -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="parallax-layer absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="parallax-layer absolute bottom-20 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container text-center max-w-3xl relative z-10">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight reveal-scale">
             Biznesingizni yangi bosqichga olib chiqishga tayyormisiz?
         </h2>
-        <p class="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed">
+        <p class="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed reveal-fade reveal-stagger-1">
             Bugun bepul boshlang va Balans AI ning qudratini his qiling
         </p>
-        <div class="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="{{ url_for('pricing') }}" class="bg-white text-primary hover:bg-gray-100 px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105">
+        <div class="flex flex-col sm:flex-row gap-5 justify-center reveal-scale reveal-stagger-2">
+            <a href="{{ url_for('pricing') }}" class="bg-white text-primary hover:bg-gray-100 px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-110 shadow-2xl btn-magnetic">
                 Bepul boshlash
             </a>
-            <a href="{{ url_for('contact') }}" class="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-105">
+            <a href="{{ url_for('contact') }}" class="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 rounded-xl font-bold text-lg transition-all hover:transform hover:scale-110 btn-magnetic">
                 Bog'lanish
             </a>
+        </div>
+
+        <!-- 3D Floating Icons Around CTA -->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto">
+            <div class="icon-3d-container reveal-rotate">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center float-3d">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="icon-3d-container reveal-rotate reveal-stagger-1">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center float-3d">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="icon-3d-container reveal-rotate reveal-stagger-2">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center float-3d">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 </section>
