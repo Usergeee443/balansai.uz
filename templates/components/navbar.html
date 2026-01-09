@@ -23,6 +23,12 @@
                 <a href="{{ url_for('features') }}" class="nav-link {% if request.endpoint == 'features' %}active{% endif %}">
                     Imkoniyatlar
                 </a>
+                <a href="#how-it-works" class="nav-link">
+                    Qanday ishlaydi
+                </a>
+                <a href="#integrations" class="nav-link">
+                    Integratsiyalar
+                </a>
                 <a href="{{ url_for('pricing') }}" class="nav-link {% if request.endpoint == 'pricing' %}active{% endif %}">
                     Tariflar
                 </a>
@@ -34,7 +40,7 @@
             <!-- CTA Button -->
             <div class="hidden lg:block">
                 <a href="{{ url_for('pricing') }}" class="navbar-cta-btn">
-                    Boshlash
+                    Ro'yxatdan o'tish
                 </a>
             </div>
 

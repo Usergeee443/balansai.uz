@@ -10,7 +10,17 @@ window.addEventListener('scroll', function() {
             navbar.classList.remove('scrolled');
         }
     }
-});
+    
+    // Hero section hide on scroll
+    const hero = document.querySelector('.hero-gradient');
+    if (hero) {
+        if (window.scrollY > window.innerHeight * 0.5) {
+            hero.classList.add('scrolled');
+        } else {
+            hero.classList.remove('scrolled');
+        }
+    }
+}, { passive: true });
 
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -184,45 +194,125 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Dashboard card sticky/fixed behavior
+// FAQ Accordion
 document.addEventListener('DOMContentLoaded', function() {
-    const dashboardCard = document.querySelector('.dashboard-overlay-section .card');
-    const dashboardSection = document.querySelector('.dashboard-overlay-section');
+    const faqItems = document.querySelectorAll('.faq-item');
     
-    if (dashboardCard && dashboardSection) {
-        let cardOffsetTop = 0;
-        let cardHeight = 0;
-        let isFixed = false;
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
         
-        // Calculate initial positions
-        function updatePositions() {
-            cardOffsetTop = dashboardSection.offsetTop;
-            cardHeight = dashboardCard.offsetHeight;
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Newsletter Form
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('.newsletter-input');
+            const email = emailInput.value.trim();
+            
+            if (email) {
+                // Here you would typically send the email to your backend
+                alert('Rahmat! Newsletter\'ga muvaffaqiyatli qo\'shildingiz.');
+                emailInput.value = '';
+            }
+        });
+    }
+});
+
+// Dashboard Images Scroll Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const dashboardSection = document.querySelector('.dashboard-overlay-section');
+    const image1 = document.querySelector('.dashboard-image-1');
+    const image2 = document.querySelector('.dashboard-image-2');
+    const image3 = document.querySelector('.dashboard-image-3');
+    
+    if (dashboardSection && image1 && image2 && image3) {
+        let currentImage = 1;
+        let sectionTop = dashboardSection.offsetTop;
+        let sectionHeight = dashboardSection.offsetHeight;
+        
+        function updateImages() {
+            const scrollY = window.scrollY || window.pageYOffset;
+            const viewportHeight = window.innerHeight;
+            const sectionStart = sectionTop - viewportHeight;
+            const scrollProgress = (scrollY - sectionStart) / (sectionHeight * 0.6);
+            
+            // Clamp scroll progress between 0 and 1
+            const progress = Math.max(0, Math.min(1, scrollProgress));
+            
+            // Show image 1 initially (0-33%)
+            if (progress < 0.33) {
+                if (currentImage !== 1) {
+                    currentImage = 1;
+                    image1.style.opacity = '1';
+                    image1.style.transform = 'translateX(0)';
+                    image2.style.opacity = '0';
+                    image2.style.transform = 'translateX(100%)';
+                    image3.style.opacity = '0';
+                    image3.style.transform = 'translateX(100%)';
+                }
+            }
+            // Show image 2 when scroll reaches 33% (33-66%)
+            else if (progress < 0.66) {
+                if (currentImage !== 2) {
+                    currentImage = 2;
+                    image1.style.opacity = '0';
+                    image1.style.transform = 'translateX(-100%)';
+                    image2.style.opacity = '1';
+                    image2.style.transform = 'translateX(0)';
+                    image3.style.opacity = '0';
+                    image3.style.transform = 'translateX(100%)';
+                }
+            }
+            // Show image 3 when scroll reaches 66% (66-100%)
+            else {
+                if (currentImage !== 3) {
+                    currentImage = 3;
+                    image1.style.opacity = '0';
+                    image1.style.transform = 'translateX(-100%)';
+                    image2.style.opacity = '0';
+                    image2.style.transform = 'translateX(-100%)';
+                    image3.style.opacity = '1';
+                    image3.style.transform = 'translateX(0)';
+                }
+            }
         }
         
-        updatePositions();
+        // Initial check
+        updateImages();
+        
+        // Update on scroll
+        window.addEventListener('scroll', function() {
+            updateImages();
+        }, { passive: true });
         
         // Recalculate on resize
         window.addEventListener('resize', function() {
-            updatePositions();
+            sectionTop = dashboardSection.offsetTop;
+            sectionHeight = dashboardSection.offsetHeight;
         });
-        
-        window.addEventListener('scroll', function() {
-            const scrollY = window.scrollY || window.pageYOffset;
-            
-            // Calculate when card should become fixed (when section reaches top)
-            const shouldBeFixed = scrollY >= cardOffsetTop - 100;
-            
-            if (shouldBeFixed && !isFixed) {
-                isFixed = true;
-                dashboardCard.classList.add('dashboard-fixed');
-                // Add padding to section to prevent content jump
-                dashboardSection.style.paddingBottom = cardHeight + 'px';
-            } else if (!shouldBeFixed && isFixed) {
-                isFixed = false;
-                dashboardCard.classList.remove('dashboard-fixed');
-                dashboardSection.style.paddingBottom = '';
-            }
-        }, { passive: true });
     }
 });
