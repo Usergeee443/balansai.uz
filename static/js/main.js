@@ -251,52 +251,89 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (dashboardSection && image1 && image2 && image3) {
         let currentImage = 1;
-        let sectionTop = dashboardSection.offsetTop;
-        let sectionHeight = dashboardSection.offsetHeight;
+        let sectionTop = 0;
+        let sectionHeight = 0;
+        
+        function calculatePositions() {
+            sectionTop = dashboardSection.offsetTop;
+            sectionHeight = dashboardSection.offsetHeight;
+        }
+        
+        calculatePositions();
         
         function updateImages() {
             const scrollY = window.scrollY || window.pageYOffset;
             const viewportHeight = window.innerHeight;
-            const sectionStart = sectionTop - viewportHeight;
-            const scrollProgress = (scrollY - sectionStart) / (sectionHeight * 0.6);
             
-            // Clamp scroll progress between 0 and 1
-            const progress = Math.max(0, Math.min(1, scrollProgress));
+            // Section boshlanishi - section top viewport markaziga yetganda
+            const sectionStart = sectionTop - viewportHeight * 0.3;
+            // Section oxiri - section pastki qismi viewport pastki qismiga yetganda
+            const sectionEnd = sectionTop + sectionHeight - viewportHeight * 0.7;
+            // Scroll masofasi
+            const scrollDistance = sectionEnd - sectionStart;
+            
+            // Scroll progress (0 dan 1 gacha)
+            let scrollProgress = 0;
+            if (scrollDistance > 0) {
+                if (scrollY < sectionStart) {
+                    scrollProgress = 0;
+                } else if (scrollY > sectionEnd) {
+                    scrollProgress = 1;
+                } else {
+                    scrollProgress = (scrollY - sectionStart) / scrollDistance;
+                    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+                }
+            }
+            
+            // Har bir rasm uchun progress qismlari - har biri teng qism
+            const image1End = 0.33;   // 0-33% - 1-rasm to'liq ko'rinadi
+            const image2Start = 0.33;  // 33-66% - 2-rasm to'liq ko'rinadi
+            const image2End = 0.66;
+            const image3Start = 0.66;  // 66-100% - 3-rasm to'liq ko'rinadi
             
             // Show image 1 initially (0-33%)
-            if (progress < 0.33) {
+            if (scrollProgress < image1End) {
                 if (currentImage !== 1) {
                     currentImage = 1;
                     image1.style.opacity = '1';
-                    image1.style.transform = 'translateX(0)';
+                    image1.style.transform = 'translate(0, -45%)';
+                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image2.style.opacity = '0';
-                    image2.style.transform = 'translateX(100%)';
+                    image2.style.transform = 'translate(100%, -45%)';
+                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image3.style.opacity = '0';
-                    image3.style.transform = 'translateX(100%)';
+                    image3.style.transform = 'translate(100%, -45%)';
+                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                 }
             }
             // Show image 2 when scroll reaches 33% (33-66%)
-            else if (progress < 0.66) {
+            else if (scrollProgress >= image2Start && scrollProgress < image2End) {
                 if (currentImage !== 2) {
                     currentImage = 2;
                     image1.style.opacity = '0';
-                    image1.style.transform = 'translateX(-100%)';
+                    image1.style.transform = 'translate(-100%, -45%)';
+                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image2.style.opacity = '1';
-                    image2.style.transform = 'translateX(0)';
+                    image2.style.transform = 'translate(0, -45%)';
+                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image3.style.opacity = '0';
-                    image3.style.transform = 'translateX(100%)';
+                    image3.style.transform = 'translate(100%, -45%)';
+                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                 }
             }
             // Show image 3 when scroll reaches 66% (66-100%)
-            else {
+            else if (scrollProgress >= image3Start) {
                 if (currentImage !== 3) {
                     currentImage = 3;
                     image1.style.opacity = '0';
-                    image1.style.transform = 'translateX(-100%)';
+                    image1.style.transform = 'translate(-100%, -45%)';
+                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image2.style.opacity = '0';
-                    image2.style.transform = 'translateX(-100%)';
+                    image2.style.transform = 'translate(-100%, -45%)';
+                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                     image3.style.opacity = '1';
-                    image3.style.transform = 'translateX(0)';
+                    image3.style.transform = 'translate(0, -45%)';
+                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
                 }
             }
         }
@@ -311,8 +348,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Recalculate on resize
         window.addEventListener('resize', function() {
-            sectionTop = dashboardSection.offsetTop;
-            sectionHeight = dashboardSection.offsetHeight;
+            calculatePositions();
+            updateImages();
         });
     }
 });
