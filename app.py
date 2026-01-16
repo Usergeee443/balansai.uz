@@ -80,6 +80,26 @@ def contact():
 
     return render_template('pages/contact.html')
 
+@app.route('/services')
+def services():
+    """Xizmatlar"""
+    return render_template('pages/services.html')
+
+@app.route('/blog')
+def blog():
+    """Blog"""
+    return render_template('pages/blog.html')
+
+@app.route('/privacy')
+def privacy():
+    """Maxfiylik siyosati"""
+    return render_template('pages/privacy.html')
+
+@app.route('/terms')
+def terms():
+    """Foydalanish shartlari"""
+    return render_template('pages/terms.html')
+
 # ============ ADMIN ROUTES ============
 
 @app.route('/admin/login', methods=['GET', 'POST'])

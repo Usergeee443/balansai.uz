@@ -1,0 +1,337 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - BalansAI.uz{% endblock %}
+{% block description %}BalansAI blog: AI, biznes tahlili, moliyaviy rejalashtirish va biznes avtomatlashtirish haqida maqolalar.{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="section section-after-hero">
+    <div class="container">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                BalansAI <span class="gradient-text-animated">Blog</span>
+            </h1>
+            <p class="text-xl text-secondary mb-8">
+                AI, biznes tahlili va moliyaviy rejalashtirish haqida foydali maqolalar va yangiliklardan xabardor bo'ling
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Post -->
+<section class="section">
+    <div class="container">
+        <div class="featured-post-card">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="blog-image-large">
+                    <div class="blog-image-placeholder-large"></div>
+                </div>
+                <div>
+                    <div class="blog-category">ASOSIY MAQOLA</div>
+                    <h2 class="text-3xl font-bold mb-4 text-primary">
+                        AI texnologiyalari biznesni qanday o'zgartirmoqda: 2024 yil tendentsiyalari
+                    </h2>
+                    <p class="text-secondary mb-6">
+                        Sun'iy intellekt biznes olamida inqilob yaratmoqda. Kichik startaplardan tortib katta korporatsiyalargacha, barcha kompaniyalar AI ning imkoniyatlaridan foydalanmoqda. Ushbu maqolada biz 2024 yilda AI ning asosiy tendentsiyalarini ko'rib chiqamiz...
+                    </p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="author-avatar">AI</div>
+                        <div>
+                            <div class="font-semibold text-primary">BalansAI Jamoa</div>
+                            <div class="text-sm text-tertiary">15 Yanvar, 2026 • 8 daqiqa o'qish</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Davomini o'qish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="section">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">MOLIYA</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">12 Yanvar, 2026</div>
+                    <h3 class="blog-title">Moliyaviy bashorat qilishda AI ning roli</h3>
+                    <p class="blog-excerpt">
+                        Sun'iy intellekt moliyaviy bashorat qilishda yuqori aniqlikka erishishga yordam beradi va biznes egalariga to'g'ri qarorlar qabul qilishda yordam beradi.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">AVTOMATLASHTIRISH</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">10 Yanvar, 2026</div>
+                    <h3 class="blog-title">Biznes jarayonlarni avtomatlashtirishning 5 ta afzalligi</h3>
+                    <p class="blog-excerpt">
+                        Avtomatlashtirish nafaqat vaqtni tejaydi, balki xatolarni kamaytiradi va xodimlarning samaradorligini oshiradi.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">CRM</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">8 Yanvar, 2026</div>
+                    <h3 class="blog-title">CRM tizimi: Mijozlar bilan munosabatlarni boshqarish</h3>
+                    <p class="blog-excerpt">
+                        Zamonaviy CRM tizimlari AI yordamida mijozlar ehtiyojlarini bashorat qiladi va sodiqlikni oshiradi.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">TAHLIL</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">5 Yanvar, 2026</div>
+                    <h3 class="blog-title">Ma'lumotlar tahlili: Biznesingiz uchun qimmatli tushunchalar</h3>
+                    <p class="blog-excerpt">
+                        Ma'lumotlar tahlili orqali yashirin naqshlarni aniqlang va biznesingizni yangi bosqichga olib chiqing.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">YANGILIKLAR</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">2 Yanvar, 2026</div>
+                    <h3 class="blog-title">BalansAI yangi funksiyalari: 2026 yil yangiliklari</h3>
+                    <p class="blog-excerpt">
+                        Yangi yilda biz platformamizga bir nechta qiziqarli funksiyalarni qo'shyapmiz. Ularning barchasi haqida bu yerda o'qing.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder"></div>
+                    <div class="blog-category-tag">QOʻLLANMA</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">28 Dekabr, 2025</div>
+                    <h3 class="blog-title">Yangi boshlovchilar uchun: BalansAI bilan boshlash</h3>
+                    <p class="blog-excerpt">
+                        BalansAI platformasini birinchi marta ishlatasizmi? Ushbu qo'llanma sizga boshlashda yordam beradi.
+                    </p>
+                    <a href="#" class="blog-read-more">Batafsil →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center gap-4 mt-12">
+            <button class="pagination-btn" disabled>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <div class="pagination-numbers">
+                <button class="pagination-num active">1</button>
+                <button class="pagination-num">2</button>
+                <button class="pagination-num">3</button>
+            </div>
+            <button class="pagination-btn">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="section bg-secondary">
+    <div class="container">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="section-title">Yangiliklardan xabardor bo'ling</h2>
+            <p class="section-subtitle">
+                Yangi maqolalar va yangiliklar haqida birinchilardan bo'lib bilib oling
+            </p>
+            <form class="newsletter-form flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                    type="email"
+                    class="newsletter-input flex-1"
+                    placeholder="Email manzilingiz"
+                    required
+                >
+                <button type="submit" class="newsletter-btn">Obuna bo'lish</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+.featured-post-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all var(--transition);
+}
+
+.featured-post-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.blog-image-large {
+    width: 100%;
+    height: 400px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.blog-image-placeholder-large {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.3));
+}
+
+.blog-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 0.25rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.blog-category-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-blue);
+    border-radius: 0.25rem;
+    z-index: 1;
+}
+
+.blog-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-read-more {
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.blog-read-more:hover {
+    color: var(--accent-blue-light);
+}
+
+.pagination-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-num {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.pagination-num:hover {
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.pagination-num.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: white;
+}
+</style>
+
+{% endblock %}

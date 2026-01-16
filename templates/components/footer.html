@@ -27,10 +27,10 @@
             <div>
                 <h3 class="footer-section-title">Mahsulot</h3>
                 <ul class="footer-links">
+                    <li><a href="{{ url_for('services') }}">Xizmatlar</a></li>
                     <li><a href="{{ url_for('features') }}">Imkoniyatlar</a></li>
                     <li><a href="{{ url_for('pricing') }}">Tariflar</a></li>
-                    <li><a href="#integrations">Integratsiyalar</a></li>
-                    <li><a href="#how-it-works">Qanday ishlaydi</a></li>
+                    <li><a href="{{ url_for('index') }}#integrations">Integratsiyalar</a></li>
                 </ul>
             </div>
 
@@ -39,20 +39,20 @@
                 <h3 class="footer-section-title">Kompaniya</h3>
                 <ul class="footer-links">
                     <li><a href="{{ url_for('about') }}">Haqida</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
                     <li><a href="{{ url_for('contact') }}">Aloqa</a></li>
-                    <li><a href="#">Karyera</a></li>
+                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
                 </ul>
             </div>
 
             <!-- Resources Links -->
             <div>
-                <h3 class="footer-section-title">Resurslar</h3>
+                <h3 class="footer-section-title">Huquqiy</h3>
                 <ul class="footer-links">
-                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-                    <li><a href="#">Yordam markazi</a></li>
-                    <li><a href="#">Hujjatlar</a></li>
-                    <li><a href="#">API</a></li>
+                    <li><a href="{{ url_for('privacy') }}">Maxfiylik siyosati</a></li>
+                    <li><a href="{{ url_for('terms') }}">Foydalanish shartlari</a></li>
+                    <li><a href="{{ url_for('contact') }}">Yordam markazi</a></li>
+                    <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
                 </ul>
             </div>
 
@@ -87,9 +87,14 @@
         <!-- Bottom -->
         <div class="border-t border-dark pt-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-secondary text-sm">
-                    © 2025 BalansAI.uz. Barcha huquqlar himoyalangan.
-                </p>
+                <div class="text-secondary text-sm text-center md:text-left">
+                    <p class="mb-2">© 2026 BalansAI.uz. Barcha huquqlar himoyalangan.</p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start text-xs">
+                        <a href="{{ url_for('privacy') }}" class="hover:text-accent-blue transition-colors">Maxfiylik</a>
+                        <a href="{{ url_for('terms') }}" class="hover:text-accent-blue transition-colors">Shartlar</a>
+                        <a href="{{ url_for('contact') }}" class="hover:text-accent-blue transition-colors">Aloqa</a>
+                    </div>
+                </div>
                 <div class="flex space-x-4 mt-4 md:mt-0">
                     <a href="#" class="text-secondary hover:text-accent-blue transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
