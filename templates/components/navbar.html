@@ -25,19 +25,43 @@
                 <a href="{{ url_for('pricing') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'pricing' %}text-primary font-medium{% endif %}">
                     Tariflar
                 </a>
-                <a href="{{ url_for('faq') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'faq' %}text-primary font-medium{% endif %}">
-                    FAQ
+                <a href="{{ url_for('blog') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'blog' or request.endpoint == 'blog_post' %}text-primary font-medium{% endif %}">
+                    Blog
                 </a>
                 <a href="{{ url_for('contact') }}" class="text-gray-700 hover:text-primary transition-colors {% if request.endpoint == 'contact' %}text-primary font-medium{% endif %}">
                     Aloqa
                 </a>
             </div>
 
-            <!-- CTA Button -->
-            <div class="hidden md:block">
-                <a href="#" class="btn btn-primary">
+            <!-- User Menu / CTA -->
+            <div class="hidden md:flex md:items-center md:space-x-4">
+                {% if session.user_id %}
+                <div class="relative group">
+                    <button class="flex items-center space-x-2 text-gray-700 hover:text-primary transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-semibold text-sm">
+                            {{ session.user_name[0]|upper }}
+                        </div>
+                        <span>{{ session.user_name }}</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-50">
+                        <a href="{{ url_for('user_dashboard') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Dashboard</a>
+                        <a href="{{ url_for('user_chat') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Yordamchi</a>
+                        <a href="{{ url_for('user_profile') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+                        <div class="border-t my-2"></div>
+                        <a href="{{ url_for('user_logout') }}" class="block px-4 py-2 text-red-600 hover:bg-gray-100">Chiqish</a>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{{ url_for('user_login') }}" class="text-gray-700 hover:text-primary transition-colors">
+                    Kirish
+                </a>
+                <a href="{{ url_for('user_register') }}" class="btn btn-primary">
                     Boshlash
                 </a>
+                {% endif %}
             </div>
 
             <!-- Mobile menu button -->
@@ -57,9 +81,19 @@
                 <a href="{{ url_for('about') }}" class="text-gray-700 hover:text-primary transition-colors">Haqida</a>
                 <a href="{{ url_for('features') }}" class="text-gray-700 hover:text-primary transition-colors">Imkoniyatlar</a>
                 <a href="{{ url_for('pricing') }}" class="text-gray-700 hover:text-primary transition-colors">Tariflar</a>
-                <a href="{{ url_for('faq') }}" class="text-gray-700 hover:text-primary transition-colors">FAQ</a>
+                <a href="{{ url_for('blog') }}" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
                 <a href="{{ url_for('contact') }}" class="text-gray-700 hover:text-primary transition-colors">Aloqa</a>
-                <a href="#" class="btn btn-primary">Boshlash</a>
+                {% if session.user_id %}
+                <div class="border-t pt-4 space-y-4">
+                    <a href="{{ url_for('user_dashboard') }}" class="text-gray-700 hover:text-primary transition-colors">Dashboard</a>
+                    <a href="{{ url_for('user_chat') }}" class="text-gray-700 hover:text-primary transition-colors">AI Yordamchi</a>
+                    <a href="{{ url_for('user_profile') }}" class="text-gray-700 hover:text-primary transition-colors">Profil</a>
+                    <a href="{{ url_for('user_logout') }}" class="text-red-600 hover:text-red-700 transition-colors">Chiqish</a>
+                </div>
+                {% else %}
+                <a href="{{ url_for('user_login') }}" class="text-gray-700 hover:text-primary transition-colors">Kirish</a>
+                <a href="{{ url_for('user_register') }}" class="btn btn-primary">Boshlash</a>
+                {% endif %}
             </div>
         </div>
     </div>

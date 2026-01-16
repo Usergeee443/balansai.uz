@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Maxfiylik siyosati - BalansAI{% endblock %}
+
+{% block content %}
+<div class="section bg-gray-50">
+    <div class="container max-w-4xl">
+        <div class="card">
+            <h1 class="text-4xl font-bold mb-6">Maxfiylik siyosati</h1>
+            <p class="text-gray-600 mb-8">Oxirgi yangilanish: 16.01.2026</p>
+
+            <div class="prose prose-lg max-w-none">
+                <h2>1. Ma'lumotlar to'plash</h2>
+                <p>Biz quyidagi ma'lumotlarni to'playmiz:</p>
+                <ul>
+                    <li>Shaxsiy ma'lumotlar (ism, email, telefon)</li>
+                    <li>Biznes ma'lumotlari (kompaniya nomi, moliyaviy ko'rsatkichlar)</li>
+                    <li>Foydalanish statistikasi</li>
+                    <li>Texnik ma'lumotlar (IP manzil, brauzer ma'lumotlari)</li>
+                </ul>
+
+                <h2>2. Ma'lumotlardan foydalanish</h2>
+                <p>Sizning ma'lumotlaringiz quyidagi maqsadlarda ishlatiladi:</p>
+                <ul>
+                    <li>Xizmatlarni taqdim etish</li>
+                    <li>Foydalanuvchi tajribasini yaxshilash</li>
+                    <li>Xizmat ko'rsatish sifatini oshirish</li>
+                    <li>Yangiliklar va takliflar yuborish</li>
+                </ul>
+
+                <h2>3. Ma'lumotlar xavfsizligi</h2>
+                <p>Biz sizning ma'lumotlaringizni himoya qilish uchun zamonaviy texnologiyalardan foydalanamiz:</p>
+                <ul>
+                    <li>SSL shifrlash</li>
+                    <li>Xavfsiz serverlar</li>
+                    <li>Kirish nazorati</li>
+                    <li>Doimiy monitoring</li>
+                </ul>
+
+                <h2>4. Cookies</h2>
+                <p>Saytimiz cookies (kukilar) dan foydalanadi. Bular saytni yanada qulay qilish va foydalanuvchi tajribasini yaxshilash uchun ishlatiladi. Siz brauzer sozlamalarida cookies ni o'chirib qo'yishingiz mumkin.</p>
+
+                <h2>5. Uchinchi tomon xizmatlari</h2>
+                <p>Biz quyidagi uchinchi tomon xizmatlaridan foydalanamiz:</p>
+                <ul>
+                    <li>To'lov tizimlari (Payme, Click, Uzum)</li>
+                    <li>Analitika vositalari</li>
+                    <li>Cloud xizmatlar</li>
+                </ul>
+                <p>Ushbu xizmatlar o'zlarining maxfiylik siyosatiga ega.</p>
+
+                <h2>6. Foydalanuvchi huquqlari</h2>
+                <p>Siz quyidagi huquqlarga egasiz:</p>
+                <ul>
+                    <li>Ma'lumotlaringizni ko'rish</li>
+                    <li>Ma'lumotlarni o'zgartirish</li>
+                    <li>Ma'lumotlarni o'chirish</li>
+                    <li>Xizmatdan voz kechish</li>
+                </ul>
+
+                <h2>7. Bolalar maxfiyligi</h2>
+                <p>Bizning xizmatlarimiz 18 yoshdan kichik bolalar uchun mo'ljallanmagan. Biz bilgan holda bolalardan ma'lumot to'plamaymiz.</p>
+
+                <h2>8. O'zgarishlar</h2>
+                <p>Biz ushbu maxfiylik siyosatini vaqti-vaqti bilan yangilaymiz. Barcha o'zgarishlar saytda e'lon qilinadi.</p>
+
+                <h2>9. Aloqa</h2>
+                <p>Maxfiylik bilan bog'liq savollar uchun:</p>
+                <ul>
+                    <li>Email: privacy@balansai.uz</li>
+                    <li>Telefon: +998 90 123 45 67</li>
+                    <li>Manzil: Toshkent, O'zbekiston</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 pt-8 border-t">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                    ← Bosh sahifaga qaytish
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

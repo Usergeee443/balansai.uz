@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}AI Yordamchi - BalansAI{% endblock %}
+
+{% block content %}
+<div class="h-screen flex flex-col bg-gray-50">
+    <!-- Header -->
+    <div class="bg-white border-b px-6 py-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="{{ url_for('user_dashboard') }}" class="text-primary hover:underline flex items-center text-sm mr-6">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Dashboard
+                </a>
+                <h1 class="text-xl font-bold text-gray-900">AI Yordamchi</h1>
+            </div>
+            <button class="btn btn-secondary" onclick="window.location.reload()">
+                Yangi suhbat
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="flex-1 overflow-hidden">
+        <div class="container mx-auto h-full max-w-4xl">
+            <div class="flex flex-col h-full">
+                <!-- Messages -->
+                <div class="flex-1 overflow-y-auto px-6 py-8" id="messages-container">
+                    {% if messages %}
+                        {% for msg in messages %}
+                        <div class="mb-6 {% if msg[2] == 'user' %}text-right{% endif %}">
+                            <div class="inline-block max-w-3xl">
+                                <div class="flex items-start {% if msg[2] == 'user' %}flex-row-reverse{% endif %}">
+                                    <div class="flex-shrink-0 {% if msg[2] == 'user' %}ml-3{% else %}mr-3{% endif %}">
+                                        {% if msg[2] == 'user' %}
+                                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-semibold">
+                                            {{ session.user_name[0]|upper }}
+                                        </div>
+                                        {% else %}
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                            </svg>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="{% if msg[2] == 'user' %}bg-primary text-white{% else %}bg-white border border-gray-200{% endif %} rounded-2xl px-6 py-4 shadow-sm">
+                                        <p class="text-sm {% if msg[2] != 'user' %}text-gray-900{% endif %}">{{ msg[3] }}</p>
+                                        <p class="text-xs mt-2 {% if msg[2] == 'user' %}opacity-75{% else %}text-gray-500{% endif %}">
+                                            {{ msg[4].strftime('%H:%M') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <!-- Welcome Message -->
+                        <div class="text-center py-12">
+                            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-3">AI Yordamchi bilan suhbatni boshlang</h2>
+                            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                                Men sizning biznesingiz bo'yicha savollarga javob berishga, moliyaviy tahlillar qilishga va maslahatlar berishga tayyorman. Menga savol bering!
+                            </p>
+
+                            <!-- Example Questions -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                                <button class="p-4 text-left bg-white border border-gray-200 rounded-lg hover:border-primary hover:shadow-md transition" onclick="fillQuestion(this.textContent)">
+                                    <p class="font-medium text-gray-900 mb-1">💰 Moliyaviy hisobot</p>
+                                    <p class="text-sm text-gray-600">Oxirgi oylik moliyaviy hisobotni tayyorla</p>
+                                </button>
+                                <button class="p-4 text-left bg-white border border-gray-200 rounded-lg hover:border-primary hover:shadow-md transition" onclick="fillQuestion(this.textContent)">
+                                    <p class="font-medium text-gray-900 mb-1">📊 Biznes tahlili</p>
+                                    <p class="text-sm text-gray-600">Biznesimning asosiy ko'rsatkichlarini tahlil qil</p>
+                                </button>
+                                <button class="p-4 text-left bg-white border border-gray-200 rounded-lg hover:border-primary hover:shadow-md transition" onclick="fillQuestion(this.textContent)">
+                                    <p class="font-medium text-gray-900 mb-1">💡 Maslahatlar</p>
+                                    <p class="text-sm text-gray-600">Daromadni oshirish bo'yicha maslahatlar ber</p>
+                                </button>
+                                <button class="p-4 text-left bg-white border border-gray-200 rounded-lg hover:border-primary hover:shadow-md transition" onclick="fillQuestion(this.textContent)">
+                                    <p class="font-medium text-gray-900 mb-1">📈 Prognoz</p>
+                                    <p class="text-sm text-gray-600">Keyingi 3 oy uchun daromad prognozini tuzib ber</p>
+                                </button>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Typing Indicator (hidden by default) -->
+                    <div id="typing-indicator" class="mb-6 hidden">
+                        <div class="inline-block">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mr-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-2xl px-6 py-4 shadow-sm">
+                                    <div class="flex space-x-2">
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Form -->
+                <div class="border-t bg-white px-6 py-4">
+                    <form id="chat-form" class="flex items-end gap-3">
+                        <div class="flex-1">
+                            <textarea id="message-input" rows="1" placeholder="Savolingizni yozing..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                                      onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault(); sendMessage();}"></textarea>
+                        </div>
+                        <button type="button" onclick="sendMessage()" class="btn btn-primary px-6 py-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-2 text-center">
+                        AI yordamchi beta versiyada. Ba'zi javoblar noto'g'ri bo'lishi mumkin.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function fillQuestion(text) {
+    const lines = text.split('\n');
+    const question = lines[lines.length - 1];
+    document.getElementById('message-input').value = question;
+    document.getElementById('message-input').focus();
+}
+
+function sendMessage() {
+    const input = document.getElementById('message-input');
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    // Show typing indicator
+    document.getElementById('typing-indicator').classList.remove('hidden');
+
+    // Simulate AI response (replace with actual API call)
+    setTimeout(() => {
+        document.getElementById('typing-indicator').classList.add('hidden');
+        alert('AI integratsiyasi hozircha ishlamaydi. Bu demo versiya.');
+    }, 2000);
+
+    input.value = '';
+}
+</script>
+{% endblock %}
