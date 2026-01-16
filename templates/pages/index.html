@@ -421,6 +421,92 @@
     </div>
 </section>
 
+<!-- Testimonials Section -->
+{% if testimonials %}
+<section class="section bg-gray-50">
+    <div class="container">
+        <div class="text-center mb-16 reveal-fade">
+            <h2 class="section-title">Mijozlarimiz fikrlari</h2>
+            <p class="section-subtitle">O'zbekistondagi yetakchi bizneslar biz bilan</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for t in testimonials %}
+            <div class="card reveal-scale reveal-stagger-{{ loop.index % 3 }}">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg mr-3">
+                        {{ t[1][0]|upper }}
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900">{{ t[1] }}</h4>
+                        <p class="text-sm text-gray-600">{{ t[2] }}{% if t[3] %}, {{ t[3] }}{% endif %}</p>
+                    </div>
+                </div>
+                <div class="text-yellow-500 mb-3">
+                    {% for i in range(t[5]) %}⭐{% endfor %}
+                </div>
+                <p class="text-gray-700">{{ t[4] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Blog Section -->
+{% if blog_posts %}
+<section class="section bg-white">
+    <div class="container">
+        <div class="flex justify-between items-center mb-12 reveal-fade">
+            <div>
+                <h2 class="section-title text-left">So'nggi maqolalar</h2>
+                <p class="section-subtitle text-left">AI va biznes haqida foydali ma'lumotlar</p>
+            </div>
+            <a href="{{ url_for('blog') }}" class="btn btn-secondary hidden md:block">
+                Barcha maqolalar →
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for post in blog_posts %}
+            <article class="card group reveal-scale reveal-stagger-{{ loop.index - 1 }}">
+                {% if post[7] %}
+                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary mb-3 inline-block">
+                    {{ post[7] }}
+                </span>
+                {% endif %}
+                
+                <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition">
+                    <a href="{{ url_for('blog_post', slug=post[2]) }}">{{ post[1] }}</a>
+                </h3>
+                
+                {% if post[3] %}
+                <p class="text-gray-600 mb-4 line-clamp-3">{{ post[3] }}</p>
+                {% endif %}
+
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>{{ post[6] }}</span>
+                    {% if post[12] %}
+                    <span>{{ post[12].strftime('%d.%m.%Y') }}</span>
+                    {% endif %}
+                </div>
+
+                <a href="{{ url_for('blog_post', slug=post[2]) }}" class="text-primary hover:underline font-medium inline-flex items-center">
+                    Batafsil →
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-8 md:hidden">
+            <a href="{{ url_for('blog') }}" class="btn btn-secondary">
+                Barcha maqolalar →
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
 <!-- CTA Section with Morphing Background -->
 <section class="section morph-background text-white relative overflow-hidden slide-over-section">
     <!-- Parallax Background Elements -->

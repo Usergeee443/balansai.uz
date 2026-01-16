@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Foydalanish shartlari - BalansAI{% endblock %}
+
+{% block content %}
+<div class="section bg-gray-50">
+    <div class="container max-w-4xl">
+        <div class="card">
+            <h1 class="text-4xl font-bold mb-6">Foydalanish shartlari</h1>
+            <p class="text-gray-600 mb-8">Oxirgi yangilanish: 16.01.2026</p>
+
+            <div class="prose prose-lg max-w-none">
+                <h2>1. Umumiy qoidalar</h2>
+                <p>BalansAI.uz platformasidan foydalanish orqali siz quyidagi shartlarga rozilik bildirasiz. Agar shartlar bilan rozi bo'lmasangiz, platformadan foydalanmang.</p>
+
+                <h2>2. Xizmat tavsifi</h2>
+                <p>BalansAI - sun'iy intellekt asosidagi biznes boshqaruv platformasi bo'lib, quyidagi xizmatlarni taqdim etadi:</p>
+                <ul>
+                    <li>Moliyaviy hisobotlar va tahlillar</li>
+                    <li>AI yordamchi maslahatlar</li>
+                    <li>Biznes ko'rsatkichlarini kuzatish</li>
+                    <li>Bashoratli tahlillar</li>
+                </ul>
+
+                <h2>3. Foydalanuvchi majburiyatlari</h2>
+                <p>Foydalanuvchi quyidagilarga majbur:</p>
+                <ul>
+                    <li>To'g'ri va aniq ma'lumotlar berish</li>
+                    <li>Hisobni shaxsiy va maxfiy saqlash</li>
+                    <li>Noqonuniy faoliyat uchun platformadan foydalanmaslik</li>
+                    <li>Boshqa foydalanuvchilar huquqlariga tajovuz qilmaslik</li>
+                </ul>
+
+                <h2>4. To'lovlar va obunalar</h2>
+                <p>BalansAI uch xil tarif rejasini taklif etadi:</p>
+                <ul>
+                    <li><strong>Free:</strong> Asosiy funksiyalar bepul</li>
+                    <li><strong>Basic:</strong> Kengaytirilgan imkoniyatlar - 99,000 UZS/oy</li>
+                    <li><strong>Premium:</strong> Barcha imkoniyatlar - 299,000 UZS/oy</li>
+                </ul>
+                <p>To'lovlar oylik asosda olinadi va avtomatik yangilanadi.</p>
+
+                <h2>5. Bekor qilish va qaytarish</h2>
+                <p>Obunani istalgan vaqtda bekor qilishingiz mumkin. Joriy oylik to'lov qaytarilmaydi, lekin obuna davri tugagunga qadar xizmatdan foydalanishda davom etasiz.</p>
+
+                <h2>6. Intellektual mulk</h2>
+                <p>BalansAI platformasining barcha kontenti, dizayni va kodlari mualliflik huquqi bilan himoyalangan. Ruxsatsiz nusxa ko'chirish yoki tarqatish taqiqlanadi.</p>
+
+                <h2>7. Ma'lumotlar himoyasi</h2>
+                <p>Sizning ma'lumotlaringiz bizning <a href="{{ url_for('privacy') }}" class="text-primary hover:underline">Maxfiylik siyosatimiz</a> asosida himoyalanadi.</p>
+
+                <h2>8. Xizmat cheklovlari</h2>
+                <p>Biz quyidagi hollarda xizmatni cheklash yoki to'xtatish huquqiga egamiz:</p>
+                <ul>
+                    <li>Foydalanish shartlarining buzilishi</li>
+                    <li>To'lovlarning o'z vaqtida amalga oshirilmasligi</li>
+                    <li>Texnik muammolar</li>
+                    <li>Qonun talablari</li>
+                </ul>
+
+                <h2>9. Javobgarlik cheklovi</h2>
+                <p>BalansAI quyidagilar uchun javobgar emas:</p>
+                <ul>
+                    <li>Noto'g'ri ma'lumotlar kiritish natijasida yuzaga kelgan zararlar</li>
+                    <li>Uchinchi tomon xizmatlari muammolari</li>
+                    <li>Internet ulanishi bilan bog'liq muammolar</li>
+                    <li>Fors-major holatlari</li>
+                </ul>
+
+                <h2>10. O'zgarishlar</h2>
+                <p>Biz ushbu shartlarni istalgan vaqtda o'zgartirish huquqiga egamiz. Barcha o'zgarishlar saytda e'lon qilinadi va darhol kuchga kiradi.</p>
+
+                <h2>11. Nizolarni hal qilish</h2>
+                <p>Barcha nizolar muzokaralar orqali hal qilinadi. Kelishuv bo'lmagan taqdirda, O'zbekiston Respublikasi qonunchiligiga muvofiq hal qilinadi.</p>
+
+                <h2>12. Aloqa</h2>
+                <p>Savol va takliflar uchun:</p>
+                <ul>
+                    <li>Email: support@balansai.uz</li>
+                    <li>Telefon: +998 90 123 45 67</li>
+                    <li>Telegram: @balansai</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 pt-8 border-t">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                    ← Bosh sahifaga qaytish
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

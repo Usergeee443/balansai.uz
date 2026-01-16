@@ -1,0 +1,55 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Fikrlar Boshqaruvi{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Mijozlar fikrlari</h1>
+    <a href="{{ url_for('admin_testimonial_new') }}" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+        + Yangi Fikr
+    </a>
+</div>
+
+<div class="bg-white rounded-lg shadow overflow-hidden">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ism</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kompaniya</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fikr</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Reyting</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tartib</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Holat</th>
+                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Harakatlar</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            {% for t in testimonials %}
+            <tr>
+                <td class="px-6 py-4">
+                    <div class="text-sm font-medium text-gray-900">{{ t[1] }}</div>
+                    <div class="text-sm text-gray-500">{{ t[2] or '-' }}</div>
+                </td>
+                <td class="px-6 py-4 text-sm text-gray-900">{{ t[3] or '-' }}</td>
+                <td class="px-6 py-4 text-sm text-gray-900">{{ t[4][:50] }}...</td>
+                <td class="px-6 py-4 text-sm text-yellow-500">{'⭐' * t[5] }}</td>
+                <td class="px-6 py-4 text-sm text-gray-900">{{ t[7] }}</td>
+                <td class="px-6 py-4">
+                    {% if t[6] %}
+                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Faol</span>
+                    {% else %}
+                    <span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800">Nofaol</span>
+                    {% endif %}
+                </td>
+                <td class="px-6 py-4 text-right text-sm">
+                    <a href="{{ url_for('admin_testimonial_edit', testimonial_id=t[0]) }}" class="text-blue-600 hover:text-blue-900 mr-3">Tahrirlash</a>
+                    <form method="POST" action="{{ url_for('admin_testimonial_delete', testimonial_id=t[0]) }}" class="inline" onsubmit="return confirm('Ishonchingiz komilmi?')">
+                        <button type="submit" class="text-red-600 hover:text-red-900">O'chirish</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

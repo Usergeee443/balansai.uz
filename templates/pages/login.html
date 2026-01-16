@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Kirish - BalansAI{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #034f46 0%, #023a34 100%);">
+    <div class="max-w-md w-full space-y-8">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white mb-2">Tizimga kirish</h2>
+            <p class="text-gray-300">Biznes panelingizga kiring</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-2xl p-8">
+            <form method="POST" action="{{ url_for('user_login') }}" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                        Email manzil
+                    </label>
+                    <input type="email" id="email" name="email" required autofocus
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+                        Parol
+                    </label>
+                    <input type="password" id="password" name="password" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">
+                            Eslab qol
+                        </label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:underline">
+                        Parolni unutdingizmi?
+                    </a>
+                </div>
+
+                <button type="submit" class="w-full btn btn-primary btn-large">
+                    Kirish
+                </button>
+            </form>
+
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Yoki</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        Hisobingiz yo'qmi?
+                        <a href="{{ url_for('user_register') }}" class="text-primary hover:underline font-medium">
+                            Ro'yxatdan o'ting
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-sm text-gray-300">
+                Ro'yxatdan o'tish bepul va faqat bir necha daqiqa vaqt oladi
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

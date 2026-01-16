@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Ro'yxatdan o'tish - BalansAI{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #034f46 0%, #023a34 100%);">
+    <div class="max-w-md w-full space-y-8">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white mb-2">Ro'yxatdan o'tish</h2>
+            <p class="text-gray-300">Biznesingizni AI bilan boshqaring</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-2xl p-8">
+            <form method="POST" action="{{ url_for('user_register') }}" class="space-y-4">
+                <div>
+                    <label for="full_name" class="block text-sm font-medium text-gray-700 mb-1">To'liq ism *</label>
+                    <input type="text" id="full_name" name="full_name" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email manzil *</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Kompaniya</label>
+                    <input type="text" id="company" name="company"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Parol *</label>
+                    <input type="password" id="password" name="password" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                    <p class="text-xs text-gray-500 mt-1">Kamida 8 ta belgi, katta va kichik harf, raqam</p>
+                </div>
+
+                <div>
+                    <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Parolni tasdiqlang *</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <div class="flex items-start">
+                    <input type="checkbox" id="terms" required class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1">
+                    <label for="terms" class="ml-2 block text-sm text-gray-700">
+                        <a href="{{ url_for('terms') }}" class="text-primary hover:underline">Foydalanish shartlari</a> va 
+                        <a href="{{ url_for('privacy') }}" class="text-primary hover:underline">Maxfiylik siyosati</a>ga roziman
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full btn btn-primary btn-large">
+                    Ro'yxatdan o'tish
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                    Hisobingiz bormi?
+                    <a href="{{ url_for('user_login') }}" class="text-primary hover:underline font-medium">
+                        Kirish
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-sm text-gray-300">
+                🎉 Ro'yxatdan o'tish bepul! Hoziroq biznesingizni yangi darajaga olib chiqing
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
