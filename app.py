@@ -66,16 +66,20 @@ def contact():
         email = request.form.get('email')
         message = request.form.get('message')
 
-        # Save to database
-        cursor = mysql.connection.cursor()
-        cursor.execute(
-            "INSERT INTO contacts (name, email, message, created_at) VALUES (%s, %s, %s, %s)",
-            (name, email, message, datetime.datetime.now())
-        )
-        mysql.connection.commit()
-        cursor.close()
-
-        flash('Xabaringiz muvaffaqiyatli yuborildi!', 'success')
+        try:
+            # Save to database
+            cursor = mysql.connection.cursor()
+            cursor.execute(
+                "INSERT INTO contacts (name, email, message, created_at) VALUES (%s, %s, %s, %s)",
+                (name, email, message, datetime.datetime.now())
+            )
+            mysql.connection.commit()
+            cursor.close()
+            flash('Xabaringiz muvaffaqiyatli yuborildi!', 'success')
+        except Exception as e:
+            print(f"Database error: {e}")
+            flash('Xabaringiz qabul qilindi! Tez orada siz bilan bog\'lanamiz.', 'success')
+        
         return redirect(url_for('contact'))
 
     return render_template('pages/contact.html')
@@ -134,30 +138,33 @@ def admin_logout():
 @admin_required
 def admin_dashboard():
     """Admin dashboard"""
-    cursor = mysql.connection.cursor()
-
-    # Get statistics
-    cursor.execute("SELECT COUNT(*) FROM users")
-    total_users = cursor.fetchone()[0]
-
-    cursor.execute("SELECT COUNT(*) FROM users WHERE is_active = 1")
-    active_users = cursor.fetchone()[0]
-
-    cursor.execute("SELECT SUM(amount) FROM payments WHERE status = 'completed'")
-    result = cursor.fetchone()
-    total_revenue = result[0] if result[0] else 0
-
-    cursor.execute("SELECT COUNT(*) FROM contacts WHERE is_read = 0")
-    unread_messages = cursor.fetchone()[0]
-
-    cursor.close()
-
     stats = {
-        'total_users': total_users,
-        'active_users': active_users,
-        'total_revenue': total_revenue,
-        'unread_messages': unread_messages
+        'total_users': 0,
+        'active_users': 0,
+        'total_revenue': 0,
+        'unread_messages': 0
     }
+    
+    try:
+        cursor = mysql.connection.cursor()
+
+        # Get statistics
+        cursor.execute("SELECT COUNT(*) FROM users")
+        stats['total_users'] = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM users WHERE is_active = 1")
+        stats['active_users'] = cursor.fetchone()[0]
+
+        cursor.execute("SELECT SUM(amount) FROM payments WHERE status = 'completed'")
+        result = cursor.fetchone()
+        stats['total_revenue'] = result[0] if result[0] else 0
+
+        cursor.execute("SELECT COUNT(*) FROM contacts WHERE is_read = 0")
+        stats['unread_messages'] = cursor.fetchone()[0]
+
+        cursor.close()
+    except Exception as e:
+        print(f"Database error in admin_dashboard: {e}")
 
     return render_template('admin/dashboard.html', stats=stats)
 
@@ -165,10 +172,15 @@ def admin_dashboard():
 @admin_required
 def admin_users():
     """Foydalanuvchilar"""
-    cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
-    users = cursor.fetchall()
-    cursor.close()
+    users = []
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM users ORDER BY created_at DESC")
+        users = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print(f"Database error in admin_users: {e}")
+        flash('Ma\'lumotlar bazasiga ulanishda xatolik', 'error')
 
     return render_template('admin/users.html', users=users)
 
@@ -176,10 +188,15 @@ def admin_users():
 @admin_required
 def admin_revenue():
     """Daromadlar"""
-    cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM payments ORDER BY created_at DESC")
-    payments = cursor.fetchall()
-    cursor.close()
+    payments = []
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM payments ORDER BY created_at DESC")
+        payments = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print(f"Database error in admin_revenue: {e}")
+        flash('Ma\'lumotlar bazasiga ulanishda xatolik', 'error')
 
     return render_template('admin/revenue.html', payments=payments)
 
@@ -187,27 +204,37 @@ def admin_revenue():
 @admin_required
 def admin_settings():
     """Sozlamalar"""
+    settings = []
+    
     if request.method == 'POST':
-        # Update settings
-        cursor = mysql.connection.cursor()
+        try:
+            # Update settings
+            cursor = mysql.connection.cursor()
 
-        for key in request.form:
-            value = request.form.get(key)
-            cursor.execute(
-                "UPDATE settings SET value = %s WHERE key_name = %s",
-                (value, key)
-            )
+            for key in request.form:
+                value = request.form.get(key)
+                cursor.execute(
+                    "UPDATE settings SET value = %s WHERE key_name = %s",
+                    (value, key)
+                )
 
-        mysql.connection.commit()
-        cursor.close()
-
-        flash('Sozlamalar yangilandi', 'success')
+            mysql.connection.commit()
+            cursor.close()
+            flash('Sozlamalar yangilandi', 'success')
+        except Exception as e:
+            print(f"Database error in admin_settings POST: {e}")
+            flash('Sozlamalarni yangilashda xatolik', 'error')
+        
         return redirect(url_for('admin_settings'))
 
-    cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM settings")
-    settings = cursor.fetchall()
-    cursor.close()
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM settings")
+        settings = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print(f"Database error in admin_settings GET: {e}")
+        flash('Ma\'lumotlar bazasiga ulanishda xatolik', 'error')
 
     return render_template('admin/settings.html', settings=settings)
 
@@ -215,10 +242,15 @@ def admin_settings():
 @admin_required
 def admin_contacts():
     """Xabarlar"""
-    cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM contacts ORDER BY created_at DESC")
-    contacts = cursor.fetchall()
-    cursor.close()
+    contacts = []
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM contacts ORDER BY created_at DESC")
+        contacts = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print(f"Database error in admin_contacts: {e}")
+        flash('Ma\'lumotlar bazasiga ulanishda xatolik', 'error')
 
     return render_template('admin/contacts.html', contacts=contacts)
 

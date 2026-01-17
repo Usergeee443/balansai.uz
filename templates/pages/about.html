@@ -1,334 +1,198 @@
 {% extends 'base.html' %}
 
-{% block title %}Balans AI haqida - BalansAI.uz{% endblock %}
-{% block description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi. Bizning missiyamiz va maqsadimiz haqida batafsil ma'lumot.{% endblock %}
+{% block title %}Haqida - BalansAI{% endblock %}
+{% block description %}BalansAI - O'zbekistondagi eng yirik AI platforma. Bizning missiyamiz va maqsadimiz.{% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="section section-after-hero">
+<!-- HERO - BLACK BG -->
+<section class="snap-section hero-section bg-black">
     <div class="container">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                Balans AI <span class="gradient-text-animated">haqida</span>
+        <div class="hero-content" style="max-width: 800px;">
+            <div class="hero-label">Biz haqimizda</div>
+            <h1 class="hero-title" style="font-size: clamp(48px, 8vw, 100px);">
+                O'zbekiston<br>
+                <span>#1 AI</span>
             </h1>
-            <p class="text-xl text-secondary">
-                O'zbekistondagi birinchi AI biznes yordamchi
+            <p class="hero-description">
+                O'zbekistondagi eng yirik sun'iy intellekt platformasi. Mahalliy bizneslar uchun jahon darajasidagi yechimlar.
             </p>
         </div>
     </div>
 </section>
 
-<!-- Mission -->
-<section class="section">
+<!-- MISSION - WHITE BG -->
+<section class="snap-section bg-white">
     <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
             <div>
-                <h2 class="text-3xl font-bold mb-6 text-primary">Bizning missiyamiz</h2>
-                <p class="text-lg text-secondary mb-4">
+                <span class="section-label" style="color: var(--blue);">Missiya</span>
+                <h2 style="font-size: 48px; font-weight: 700; color: var(--black); margin: 24px 0; line-height: 1.1;">
+                    Bizning maqsadimiz
+                </h2>
+                <p style="font-size: 18px; line-height: 1.8; color: rgba(0,0,0,0.6); margin-bottom: 24px;">
                     BalansAI - bu har bir tadbirkor va biznes egasining moliyaviy yordamchisi. Biz sun'iy intellekt texnologiyalaridan foydalanib, bizneslarni yanada samarali va rentabel qilishga yordam beramiz.
                 </p>
-                <p class="text-lg text-secondary mb-4">
+                <p style="font-size: 18px; line-height: 1.8; color: rgba(0,0,0,0.6);">
                     Bizning maqsadimiz - O'zbekiston bizneslarini zamonaviy AI texnologiyalari bilan ta'minlash va ularning rivojlanishiga hissa qo'shish.
                 </p>
-                <p class="text-lg text-secondary">
-                    Biz har bir biznesning noyobligini tushun amiz va individual yechimlar taklif qilamiz.
-                </p>
             </div>
-            <div class="card p-12 text-center">
-                <svg class="w-32 h-32 mx-auto text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div style="background: var(--gray); aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 120px; height: 120px; color: var(--blue);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
-                <p class="mt-6 text-xl font-semibold text-primary">AI quvvati bilan biznesingizni rivojlantiring</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Values -->
-<section class="section bg-secondary">
+<!-- STATS - BLUE BG -->
+<section class="snap-section bg-blue">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">Bizning <span class="gradient-text-animated">qadriyatlarimiz</span></h2>
-            <p class="section-subtitle">Biz nimaga ishonamiz</p>
+        <div class="section-header">
+            <span class="section-label" style="color: rgba(255,255,255,0.7);">Raqamlarda</span>
+            <h2 class="section-title">
+                Bizning yutuqlarimiz
+            </h2>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Innovatsiya</h3>
-                <p class="text-secondary">Eng zamonaviy AI texnologiyalarini biznesga tadbiq etamiz</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 60px;">
+            <div style="text-align: center;">
+                <div style="font-size: 72px; font-weight: 700; line-height: 1; margin-bottom: 16px;">2024</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Tashkil etilgan</div>
             </div>
-
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Ishonch</h3>
-                <p class="text-secondary">Ma'lumotlar xavfsizligi va mijozlar ishonchi bizning ustuvorligimiz</p>
+            <div style="text-align: center;">
+                <div style="font-size: 72px; font-weight: 700; line-height: 1; margin-bottom: 16px;">50+</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Jamoa a'zolari</div>
             </div>
-
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Soddalik</h3>
-                <p class="text-secondary">Murakkab texnologiyalarni oson va tushunarli qilib taqdim etamiz</p>
+            <div style="text-align: center;">
+                <div style="font-size: 72px; font-weight: 700; line-height: 1; margin-bottom: 16px;">10K+</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Foydalanuvchilar</div>
             </div>
-
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Qo'llab-quvvatlash</h3>
-                <p class="text-secondary">Har doim mijozlarimizning yonida bo'lamiz va yordam beramiz</p>
-            </div>
-
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Sifat</h3>
-                <p class="text-secondary">Yuqori sifatli xizmat va aniq natijalar kafolati</p>
-            </div>
-
-            <div class="card text-center">
-                <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-blue/30">
-                    <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3 text-primary">Rivojlanish</h3>
-                <p class="text-secondary">Doimiy yangilanish va takomillashtirish</p>
+            <div style="text-align: center;">
+                <div style="font-size: 72px; font-weight: 700; line-height: 1; margin-bottom: 16px;">#1</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">O'zbekistonda</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Timeline -->
-<section class="section">
+<!-- VALUES - BLACK BG -->
+<section class="snap-section bg-black">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">Bizning <span class="gradient-text-animated">tariximiz</span></h2>
-            <p class="section-subtitle">BalansAI ning rivojlanish yo'li</p>
+        <div class="section-header">
+            <span class="section-label">Qadriyatlar</span>
+            <h2 class="section-title">
+                Biz nimaga <span>ishonamiz</span>
+            </h2>
         </div>
-
-        <div class="max-w-4xl mx-auto">
-            <div class="timeline-item">
-                <div class="timeline-marker">2024</div>
-                <div class="timeline-content">
-                    <h3 class="text-xl font-bold text-primary mb-2">Loyiha boshlanishi</h3>
-                    <p class="text-secondary">
-                        BalansAI g'oyasi tug'ildi. O'zbekiston bizneslariga AI texnologiyalarini yetkazish missiyasi bilan ishni boshladik.
-                    </p>
-                </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px;">
+            <div style="padding: 48px; border: 1px solid rgba(255,255,255,0.1);">
+                <svg style="width: 48px; height: 48px; color: var(--blue); margin-bottom: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">Innovatsiya</h3>
+                <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.6);">Eng zamonaviy AI texnologiyalarini biznesga tadbiq etamiz.</p>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2025</div>
-                <div class="timeline-content">
-                    <h3 class="text-xl font-bold text-primary mb-2">Beta versiya</h3>
-                    <p class="text-secondary">
-                        Platformaning beta versiyasi ishga tushirildi. Birinchi 100 foydalanuvchi platformani sinab ko'rdi va ijobiy fikr bildirdi.
-                    </p>
-                </div>
+            <div style="padding: 48px; border: 1px solid rgba(255,255,255,0.1);">
+                <svg style="width: 48px; height: 48px; color: var(--blue); margin-bottom: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">Ishonch</h3>
+                <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.6);">Ma'lumotlar xavfsizligi va mijozlar ishonchi bizning ustuvorligimiz.</p>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2026</div>
-                <div class="timeline-content">
-                    <h3 class="text-xl font-bold text-primary mb-2">Rasmiy ishga tushirish</h3>
-                    <p class="text-secondary">
-                        BalansAI rasmiy ravishda ishga tushirildi. 5000+ biznes platformadan foydalanmoqda va o'z natijalarini yaxshilashmoqda.
-                    </p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">Kelajak</div>
-                <div class="timeline-content">
-                    <h3 class="text-xl font-bold text-primary mb-2">Global kengayish</h3>
-                    <p class="text-secondary">
-                        O'rta Osiyo va qo'shni davlatlarga kengayish. Yanada ko'proq bizneslarni AI bilan tanishtirishni rejalashtiramiz.
-                    </p>
-                </div>
+            <div style="padding: 48px; border: 1px solid rgba(255,255,255,0.1);">
+                <svg style="width: 48px; height: 48px; color: var(--blue); margin-bottom: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">Soddalik</h3>
+                <p style="font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.6);">Murakkab texnologiyalarni oson va tushunarli qilib taqdim etamiz.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Team -->
-<section class="section bg-secondary">
+<!-- TIMELINE - WHITE BG -->
+<section class="snap-section bg-white">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">Bizning <span class="gradient-text-animated">jamoa</span></h2>
-            <p class="section-subtitle">Professional mutaxassislar jamoasi</p>
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">Tarix</span>
+            <h2 class="section-title" style="color: var(--black);">
+                Bizning <span>yo'limiz</span>
+            </h2>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="team-card">
-                <div class="team-avatar">AA</div>
-                <h3 class="team-name">Akmal Aliyev</h3>
-                <p class="team-role">Asoschisi va CEO</p>
-                <p class="team-bio">10 yillik tajriba AI va biznes tahlilda</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 60px;">
+            <div style="border-left: 2px solid var(--blue); padding-left: 32px;">
+                <div style="font-size: 48px; font-weight: 700; color: var(--blue); margin-bottom: 16px;">2024</div>
+                <h3 style="font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px;">Boshlanish</h3>
+                <p style="font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">BalansAI g'oyasi tug'ildi va ishni boshladik.</p>
             </div>
-
-            <div class="team-card">
-                <div class="team-avatar">SD</div>
-                <h3 class="team-name">Sabina Davronova</h3>
-                <p class="team-role">CTO</p>
-                <p class="team-bio">AI va Machine Learning bo'yicha mutaxassis</p>
+            <div style="border-left: 2px solid var(--blue); padding-left: 32px;">
+                <div style="font-size: 48px; font-weight: 700; color: var(--blue); margin-bottom: 16px;">2025</div>
+                <h3 style="font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px;">Beta</h3>
+                <p style="font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">Beta versiya ishga tushirildi. Birinchi 100 foydalanuvchi.</p>
             </div>
-
-            <div class="team-card">
-                <div class="team-avatar">JT</div>
-                <h3 class="team-name">Jasur Toshmatov</h3>
-                <p class="team-role">Mahsulot direktori</p>
-                <p class="team-bio">UX/UI va mahsulot rivojlantirishda tajribali</p>
+            <div style="border-left: 2px solid var(--blue); padding-left: 32px;">
+                <div style="font-size: 48px; font-weight: 700; color: var(--blue); margin-bottom: 16px;">2026</div>
+                <h3 style="font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px;">Launch</h3>
+                <p style="font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">Rasmiy ishga tushirish. 10,000+ foydalanuvchi.</p>
             </div>
-
-            <div class="team-card">
-                <div class="team-avatar">NK</div>
-                <h3 class="team-name">Nilufar Karimova</h3>
-                <p class="team-role">Marketing direktori</p>
-                <p class="team-bio">Raqamli marketing va biznes o'sishi bo'yicha ekspert</p>
+            <div style="border-left: 2px solid var(--blue); padding-left: 32px;">
+                <div style="font-size: 48px; font-weight: 700; color: var(--blue); margin-bottom: 16px;">→</div>
+                <h3 style="font-size: 20px; font-weight: 600; color: var(--black); margin-bottom: 12px;">Kelajak</h3>
+                <p style="font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.6);">O'rta Osiyo va qo'shni davlatlarga kengayish.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="section accent-gradient">
-    <div class="container text-center max-w-3xl" style="position: relative; z-index: 1;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-            Biznesingizni BalansAI bilan rivojlantiring
-        </h2>
-        <p class="text-xl mb-8" style="color: rgba(255, 255, 255, 0.9);">
-            Bugun bepul boshlang va o'zgarishlarni his qiling
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ url_for('pricing') }}" class="btn bg-white text-accent-blue hover:bg-gray-100 btn-large" style="border: none;">
-                Bepul boshlash
-            </a>
-            <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-large" style="border-color: white; color: white;">
-                Biz bilan bog'laning
-            </a>
+<!-- TEAM - BLACK BG -->
+<section class="snap-section bg-black">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Jamoa</span>
+            <h2 class="section-title">
+                Professional <span>mutaxassislar</span>
+            </h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 60px;">
+            <div style="text-align: center;">
+                <div style="width: 120px; height: 120px; background: var(--blue); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 700;">AA</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Akmal Aliyev</h3>
+                <p style="font-size: 14px; color: var(--blue); margin-bottom: 8px;">CEO & Founder</p>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.5);">10 yillik tajriba AI va biznes tahlilda</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 120px; height: 120px; background: var(--blue); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 700;">SD</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Sabina Davronova</h3>
+                <p style="font-size: 14px; color: var(--blue); margin-bottom: 8px;">CTO</p>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.5);">AI va Machine Learning mutaxassisi</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 120px; height: 120px; background: var(--blue); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 700;">JT</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Jasur Toshmatov</h3>
+                <p style="font-size: 14px; color: var(--blue); margin-bottom: 8px;">Product Director</p>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.5);">UX/UI va mahsulot rivojlantirishda tajribali</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 120px; height: 120px; background: var(--blue); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 700;">NK</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Nilufar Karimova</h3>
+                <p style="font-size: 14px; color: var(--blue); margin-bottom: 8px;">Marketing Director</p>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.5);">Raqamli marketing va biznes o'sishi eksperti</p>
+            </div>
         </div>
     </div>
 </section>
 
-<style>
-.timeline-item {
-    position: relative;
-    padding-left: 6rem;
-    padding-bottom: 3rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 1.75rem;
-    top: 2.5rem;
-    bottom: -1rem;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent-blue), transparent);
-}
-
-.timeline-item:last-child::before {
-    display: none;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4rem;
-    height: 4rem;
-    background: var(--bg-card);
-    border: 2px solid var(--accent-blue);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.875rem;
-    color: var(--accent-blue);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.timeline-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-dark);
-    border-radius: 1rem;
-    padding: 2rem;
-    transition: all var(--transition);
-}
-
-.timeline-content:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-    transform: translateX(0.5rem);
-}
-
-.team-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-dark);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all var(--transition);
-}
-
-.team-card:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-}
-
-.team-avatar {
-    width: 5rem;
-    height: 5rem;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin: 0 auto 1.5rem;
-}
-
-.team-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.team-role {
-    font-size: 0.9375rem;
-    color: var(--accent-blue);
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-}
-
-.team-bio {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-}
-</style>
+<!-- CTA - BLUE BG -->
+<section class="snap-section cta-section bg-blue">
+    <div class="container">
+        <h2 class="cta-title">Biznesingizni rivojlantiring</h2>
+        <p class="cta-desc">Bugun bepul boshlang va o'zgarishlarni his qiling.</p>
+        <div style="display: flex; gap: 16px; justify-content: center;">
+            <a href="{{ url_for('pricing') }}" class="cta-btn">Bepul boshlash</a>
+            <a href="{{ url_for('contact') }}" class="cta-btn" style="background: transparent; border: 1px solid var(--white); color: var(--white);">Bog'lanish</a>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

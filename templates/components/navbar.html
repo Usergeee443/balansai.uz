@@ -1,99 +1,65 @@
-<nav class="navbar modern-navbar floating-navbar">
+<nav class="navbar floating-navbar" id="main-navbar">
     <div class="navbar-container">
-        <div class="flex items-center justify-between h-16">
-            <!-- Logo with Brand Name -->
-            <div class="flex items-center gap-3">
+        <!-- Logo -->
                 <a href="{{ url_for('index') }}" class="logo-link">
-                    <div class="logo-container">
                         <img src="{{ url_for('static', filename='images/Balansai-logo.png') }}" 
-                             alt="BalansAI Logo" 
+                 alt="BalansAI" 
                              class="logo-image">
-                    </div>
-                </a>
-            </div>
+        </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex lg:items-center lg:gap-8">
-                <a href="{{ url_for('index') }}" class="nav-link {% if request.endpoint == 'index' %}active{% endif %}">
-                    Bosh sahifa
-                </a>
-                <a href="{{ url_for('services') }}" class="nav-link {% if request.endpoint == 'services' %}active{% endif %}">
-                    Xizmatlar
-                </a>
-                <a href="{{ url_for('features') }}" class="nav-link {% if request.endpoint == 'features' %}active{% endif %}">
-                    Imkoniyatlar
-                </a>
-                <a href="{{ url_for('pricing') }}" class="nav-link {% if request.endpoint == 'pricing' %}active{% endif %}">
-                    Tariflar
-                </a>
-                <a href="{{ url_for('blog') }}" class="nav-link {% if request.endpoint == 'blog' %}active{% endif %}">
-                    Blog
-                </a>
-                <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
-                    Aloqa
-                </a>
-            </div>
+        <!-- Right Side: Language + Menu -->
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <!-- Language Switcher -->
+            <button class="nav-icon-btn" id="lang-btn" title="Tilni o'zgartirish">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                </svg>
+            </button>
 
-            <!-- CTA Button -->
-            <div class="hidden lg:block">
-                <a href="{{ url_for('pricing') }}" class="navbar-cta-btn">
-                    Ro'yxatdan o'tish
-                </a>
-            </div>
-
-            <!-- Mobile menu button -->
-            <div class="lg:hidden">
-                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
-                    <span class="mobile-menu-line"></span>
-                    <span class="mobile-menu-line"></span>
-                    <span class="mobile-menu-line"></span>
+            <!-- Menu Button -->
+            <button class="nav-icon-btn menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="menu-icon-open">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="menu-icon-close" style="display: none;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
                 </button>
             </div>
         </div>
+</nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu hidden lg:hidden">
-            <div class="mobile-menu-content">
-                <a href="{{ url_for('index') }}" class="mobile-nav-link {% if request.endpoint == 'index' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <span>Bosh sahifa</span>
-                </a>
-                <a href="{{ url_for('services') }}" class="mobile-nav-link {% if request.endpoint == 'services' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>Xizmatlar</span>
-                </a>
-                <a href="{{ url_for('features') }}" class="mobile-nav-link {% if request.endpoint == 'features' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span>Imkoniyatlar</span>
-                </a>
-                <a href="{{ url_for('pricing') }}" class="mobile-nav-link {% if request.endpoint == 'pricing' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span>Tariflar</span>
-                </a>
-                <a href="{{ url_for('blog') }}" class="mobile-nav-link {% if request.endpoint == 'blog' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                    </svg>
-                    <span>Blog</span>
-                </a>
-                <a href="{{ url_for('contact') }}" class="mobile-nav-link {% if request.endpoint == 'contact' %}active{% endif %}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>Aloqa</span>
-                </a>
-                <a href="{{ url_for('pricing') }}" class="mobile-nav-cta navbar-cta-btn w-full mt-4" style="text-align: center; display: block;">
-                    Boshlash
-                </a>
+<!-- Full Screen Menu -->
+<div class="fullscreen-menu" id="fullscreen-menu">
+    <div class="menu-content">
+        <nav class="menu-nav">
+            <a href="{{ url_for('index') }}" class="menu-link">
+                <span class="menu-link-number">01</span>
+                <span class="menu-link-text">Bosh sahifa</span>
+            </a>
+            <a href="{{ url_for('features') }}" class="menu-link">
+                <span class="menu-link-number">02</span>
+                <span class="menu-link-text">Imkoniyatlar</span>
+            </a>
+            <a href="{{ url_for('pricing') }}" class="menu-link">
+                <span class="menu-link-number">03</span>
+                <span class="menu-link-text">Tariflar</span>
+            </a>
+            <a href="{{ url_for('about') }}" class="menu-link">
+                <span class="menu-link-number">04</span>
+                <span class="menu-link-text">Haqida</span>
+            </a>
+            <a href="{{ url_for('contact') }}" class="menu-link">
+                <span class="menu-link-number">05</span>
+                <span class="menu-link-text">Aloqa</span>
+            </a>
+        </nav>
+        <div class="menu-footer">
+            <div class="menu-footer-links">
+                <a href="mailto:info@balansai.uz">info@balansai.uz</a>
+                <a href="https://t.me/balansai" target="_blank">Telegram</a>
             </div>
+            <p class="menu-footer-copy">© 2026 BalansAI</p>
         </div>
     </div>
-</nav>
+</div>

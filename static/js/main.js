@@ -1,200 +1,117 @@
-// BalansAI.uz - Professional JavaScript
+// BalansAI.uz - Premium Minimalist Design
+// 3 Colors: Blue, Black, White
 
-// Floating Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.floating-navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-    
-    // Hero section hide on scroll
-    const hero = document.querySelector('.hero-gradient');
-    if (hero) {
-        if (window.scrollY > window.innerHeight * 0.5) {
-            hero.classList.add('scrolled');
-        } else {
-            hero.classList.remove('scrolled');
-        }
-    }
-}, { passive: true });
-
-// Mobile menu toggle
+// ============================================
+// FULLSCREEN MENU
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const fullscreenMenu = document.getElementById('fullscreen-menu');
+    const menuIconOpen = menuBtn?.querySelector('.menu-icon-open');
+    const menuIconClose = menuBtn?.querySelector('.menu-icon-close');
     const body = document.body;
 
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const isActive = mobileMenuBtn.classList.contains('active');
+    if (menuBtn && fullscreenMenu) {
+        menuBtn.addEventListener('click', function() {
+            const isActive = fullscreenMenu.classList.contains('active');
             
             if (isActive) {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
+                // Close menu
+                fullscreenMenu.classList.remove('active');
+                menuIconOpen.style.display = 'block';
+                menuIconClose.style.display = 'none';
                 body.style.overflow = '';
             } else {
-                mobileMenuBtn.classList.add('active');
-                mobileMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    mobileMenu.classList.add('active');
-                }, 10);
+                // Open menu
+                fullscreenMenu.classList.add('active');
+                menuIconOpen.style.display = 'none';
+                menuIconClose.style.display = 'block';
                 body.style.overflow = 'hidden';
             }
         });
 
         // Close menu when clicking on links
-        const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
-        mobileLinks.forEach(link => {
+        const menuLinks = fullscreenMenu.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
+                fullscreenMenu.classList.remove('active');
+                menuIconOpen.style.display = 'block';
+                menuIconClose.style.display = 'none';
                 body.style.overflow = '';
             });
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                if (mobileMenuBtn.classList.contains('active')) {
-                    mobileMenuBtn.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                    body.style.overflow = '';
-                }
-            }
-        });
     }
 });
 
-// Animated Counter
-function animateCounter(element, target, duration = 2000) {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = formatNumber(target);
-            clearInterval(timer);
-        } else {
-            element.textContent = formatNumber(Math.floor(current));
-        }
-    }, 16);
-}
-
-function formatNumber(num) {
-    if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K+';
-    }
-    return num.toString();
-}
-
-// Initialize counters when they come into view
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-            const target = parseInt(entry.target.getAttribute('data-target') || entry.target.textContent);
-            entry.target.classList.add('counted');
-            animateCounter(entry.target, target);
-        }
-    });
-}, { threshold: 0.5 });
-
+// ============================================
+// NAVBAR BACKGROUND CHANGE ON SCROLL
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const counters = document.querySelectorAll('.counter-number');
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
-    });
-});
-
-// Scroll animations
-const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-on-scroll');
-    fadeElements.forEach(el => {
-        fadeObserver.observe(el);
-    });
-});
-
-// Smooth scroll for anchor links
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-});
-
-// Form validation
-document.addEventListener('DOMContentLoaded', function() {
-    const forms = document.querySelectorAll('form');
+    const navbar = document.getElementById('main-navbar');
+    const sections = document.querySelectorAll('.snap-section');
     
-    forms.forEach(form => {
-        const inputs = form.querySelectorAll('input, textarea');
+    if (navbar && sections.length > 0) {
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '-80px 0px 0px 0px'
+        };
         
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value.trim()) {
-                    this.classList.add('error');
-                } else {
-                    this.classList.remove('error');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    
+                    // Remove all classes
+                    navbar.classList.remove('on-white', 'on-blue', 'on-black');
+                    
+                    // Add appropriate class
+                    if (section.classList.contains('bg-white')) {
+                        navbar.classList.add('on-white');
+                    } else if (section.classList.contains('bg-blue')) {
+                        navbar.classList.add('on-blue');
+                    } else {
+                        navbar.classList.add('on-black');
+                    }
                 }
             });
-            
-            input.addEventListener('input', function() {
-                if (this.value.trim() !== '') {
-                    this.classList.remove('error');
-                }
-            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            sectionObserver.observe(section);
         });
-    });
+    }
 });
 
-// Auto-hide alerts
+// ============================================
+// SCROLL ANIMATIONS - Elements appear on scroll
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const alerts = document.querySelectorAll('.alert');
-    alerts.forEach(alert => {
-        setTimeout(() => {
-            alert.style.opacity = '0';
-            setTimeout(() => {
-                alert.remove();
-            }, 300);
-        }, 5000);
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animatable elements
+    const animatableElements = document.querySelectorAll(
+        '.stat-item, .feature-card, .how-step, .pricing-card, .faq-item'
+    );
+    
+    animatableElements.forEach(el => {
+        observer.observe(el);
     });
 });
 
-// FAQ Accordion
+// ============================================
+// FAQ ACCORDION
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -213,143 +130,141 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Toggle current item
-                if (isActive) {
-                    item.classList.remove('active');
-                } else {
-                    item.classList.add('active');
-                }
+                item.classList.toggle('active');
             });
         }
     });
 });
 
-// Newsletter Form
+// ============================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('.newsletter-input');
-            const email = emailInput.value.trim();
-            
-            if (email) {
-                // Here you would typically send the email to your backend
-                alert('Rahmat! Newsletter\'ga muvaffaqiyatli qo\'shildingiz.');
-                emailInput.value = '';
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
+        });
+    });
+});
+
+// ============================================
+// TESTIMONIALS PAUSE ON HOVER
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonials-track');
+    
+    if (track) {
+        track.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        track.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
         });
     }
 });
 
-// Dashboard Images Scroll Animation
+// ============================================
+// SCROLL INDICATOR HIDE ON SCROLL
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const dashboardSection = document.querySelector('.dashboard-overlay-section');
-    const image1 = document.querySelector('.dashboard-image-1');
-    const image2 = document.querySelector('.dashboard-image-2');
-    const image3 = document.querySelector('.dashboard-image-3');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
     
-    if (dashboardSection && image1 && image2 && image3) {
-        let currentImage = 1;
-        let sectionTop = 0;
-        let sectionHeight = 0;
-        
-        function calculatePositions() {
-            sectionTop = dashboardSection.offsetTop;
-            sectionHeight = dashboardSection.offsetHeight;
-        }
-        
-        calculatePositions();
-        
-        function updateImages() {
-            const scrollY = window.scrollY || window.pageYOffset;
-            const viewportHeight = window.innerHeight;
-            
-            // Section boshlanishi - section top viewport markaziga yetganda
-            const sectionStart = sectionTop - viewportHeight * 0.3;
-            // Section oxiri - section pastki qismi viewport pastki qismiga yetganda
-            const sectionEnd = sectionTop + sectionHeight - viewportHeight * 0.7;
-            // Scroll masofasi
-            const scrollDistance = sectionEnd - sectionStart;
-            
-            // Scroll progress (0 dan 1 gacha)
-            let scrollProgress = 0;
-            if (scrollDistance > 0) {
-                if (scrollY < sectionStart) {
-                    scrollProgress = 0;
-                } else if (scrollY > sectionEnd) {
-                    scrollProgress = 1;
-                } else {
-                    scrollProgress = (scrollY - sectionStart) / scrollDistance;
-                    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-                }
-            }
-            
-            // Har bir rasm uchun progress qismlari - har biri teng qism
-            const image1End = 0.33;   // 0-33% - 1-rasm to'liq ko'rinadi
-            const image2Start = 0.33;  // 33-66% - 2-rasm to'liq ko'rinadi
-            const image2End = 0.66;
-            const image3Start = 0.66;  // 66-100% - 3-rasm to'liq ko'rinadi
-            
-            // Show image 1 initially (0-33%)
-            if (scrollProgress < image1End) {
-                if (currentImage !== 1) {
-                    currentImage = 1;
-                    image1.style.opacity = '1';
-                    image1.style.transform = 'translate(0, -45%)';
-                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image2.style.opacity = '0';
-                    image2.style.transform = 'translate(100%, -45%)';
-                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image3.style.opacity = '0';
-                    image3.style.transform = 'translate(100%, -45%)';
-                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                }
-            }
-            // Show image 2 when scroll reaches 33% (33-66%)
-            else if (scrollProgress >= image2Start && scrollProgress < image2End) {
-                if (currentImage !== 2) {
-                    currentImage = 2;
-                    image1.style.opacity = '0';
-                    image1.style.transform = 'translate(-100%, -45%)';
-                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image2.style.opacity = '1';
-                    image2.style.transform = 'translate(0, -45%)';
-                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image3.style.opacity = '0';
-                    image3.style.transform = 'translate(100%, -45%)';
-                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                }
-            }
-            // Show image 3 when scroll reaches 66% (66-100%)
-            else if (scrollProgress >= image3Start) {
-                if (currentImage !== 3) {
-                    currentImage = 3;
-                    image1.style.opacity = '0';
-                    image1.style.transform = 'translate(-100%, -45%)';
-                    image1.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image2.style.opacity = '0';
-                    image2.style.transform = 'translate(-100%, -45%)';
-                    image2.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                    image3.style.opacity = '1';
-                    image3.style.transform = 'translate(0, -45%)';
-                    image3.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                }
-            }
-        }
-        
-        // Initial check
-        updateImages();
-        
-        // Update on scroll
+    if (scrollIndicator) {
         window.addEventListener('scroll', function() {
-            updateImages();
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
         }, { passive: true });
+    }
+});
+
+// ============================================
+// AUTO-HIDE ALERTS
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+        setTimeout(() => {
+            alert.style.opacity = '0';
+            alert.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                alert.remove();
+            }, 300);
+        }, 5000);
+    });
+});
+
+// ============================================
+// FORM VALIDATION
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll('input, textarea');
         
-        // Recalculate on resize
-        window.addEventListener('resize', function() {
-            calculatePositions();
-            updateImages();
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#dc2626';
+                } else {
+                    this.style.borderColor = '';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '';
+                }
+            });
         });
+    });
+});
+
+// ============================================
+// LANGUAGE SWITCHER (Placeholder)
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.getElementById('lang-btn');
+    
+    if (langBtn) {
+        langBtn.addEventListener('click', function() {
+            // Placeholder - implement language switching logic
+            alert('Til o\'zgartirish tez orada qo\'shiladi!');
+        });
+    }
+});
+
+// ============================================
+// PARALLAX EFFECT ON HERO
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero-section');
+    
+    if (heroSection) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const heroContent = heroSection.querySelector('.hero-content');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        }, { passive: true });
     }
 });

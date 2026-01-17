@@ -1,561 +1,369 @@
 {% extends 'base.html' %}
 
-{% block title %}BalansAI.uz - AI yordamchi biznesingiz uchun{% endblock %}
-{% block description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi. Daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes avtomatlashtirish.{% endblock %}
+{% block title %}BalansAI - O'zbekistonning #1 AI Platformasi{% endblock %}
+{% block description %}BalansAI - O'zbekistondagi eng yirik AI platforma. Sun'iy intellekt yordamida biznesingizni avtomatlashtiring.{% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="hero-gradient">
+<!-- SECTION 1: HERO - BLACK BG - FANTASTIC -->
+<section class="snap-section hero-section bg-black">
+    <!-- Animated Grid Background -->
+    <div class="hero-grid-bg"></div>
+    
     <div class="container">
-        <div class="max-w-4xl mx-auto text-center hero-content">
-            <h1 class="fade-on-scroll">
-                Biznesingizni AI bilan<br>
-                <span class="gradient-text-animated">kuchaytiring</span>
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="hero-label-dot"></span>
+                O'zbekistonning #1 AI Platformasi
+            </div>
+            <h1 class="hero-title">
+                Kelajak<br>
+                <span>bugun</span><br>
+                boshlanadi
             </h1>
-            <p class="fade-on-scroll stagger-1">
-                Cheksiz o'sish va innovatsiyalarni oching - BalansAI ning zamonaviy intellektual platformasi bilan.
+            <p class="hero-description">
+                Sun'iy intellektning cheksiz imkoniyatlarini kashf eting. 
+                Biznesingizni avtomatlashtiring va raqobatchilardan oldinda bo'ling.
             </p>
-            <div class="flex justify-center items-center mt-8 fade-on-scroll stagger-2 hero-cta-wrapper">
-                <div class="hero-cta-chiqiq hero-cta-chiqiq-right"></div>
-                <a href="{{ url_for('pricing') }}" class="hero-cta-btn">
-                    Bepul boshlash
+            <div class="hero-cta">
+                <a href="{{ url_for('pricing') }}" class="btn-primary">
+                    <span>Boshlash</span>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
                 </a>
-                <div class="hero-cta-chiqiq hero-cta-chiqiq-left"></div>
+                <a href="{{ url_for('features') }}" class="btn-secondary">Batafsil</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="hero-floating-elements">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- SECTION 2: STATS - WHITE BG -->
+<section class="snap-section stats-section bg-white">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">Raqamlarda</span>
+            <h2 class="section-title" style="color: var(--black);">
+                Ishonch va <span>natijalar</span>
+            </h2>
+                </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Foydalanuvchilar</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+                        </div>
+            <div class="stat-item">
+                <div class="stat-number">50M+</div>
+                <div class="stat-label">Tahlillar</div>
+                    </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Qo'llab-quvvatlash</div>
+                        </div>
+                    </div>
+                </div>
+</section>
+
+<!-- SECTION 3: ABOUT - BLUE BG -->
+<section class="snap-section bg-blue">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label" style="color: rgba(255,255,255,0.7);">Biz haqimizda</span>
+            <h2 class="section-title">
+                O'zbekistondagi eng<br>
+                yirik AI loyiha
+            </h2>
+                        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px; align-items: center; margin-top: 60px;">
+                            <div>
+                <p style="font-size: 20px; line-height: 1.8; color: rgba(255,255,255,0.9); margin-bottom: 32px;">
+                    BalansAI - bu O'zbekistonda ishlab chiqilgan va rivojlantirilayotgan eng yirik sun'iy intellekt platformasi. Biz mahalliy bizneslar uchun jahon darajasidagi AI yechimlarni taqdim etamiz.
+                </p>
+                <p style="font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.7);">
+                    Bizning maqsadimiz - har bir O'zbek biznesiga sun'iy intellekt imkoniyatlarini olib kelish va ularni global bozorda raqobatbardosh qilish.
+                </p>
+                                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 32px; text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">2024</div>
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Tashkil etilgan</div>
+                                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 32px; text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">50+</div>
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Jamoa a'zolari</div>
+                            </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 32px; text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">100+</div>
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">Korporativ mijozlar</div>
+                                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 32px; text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">#1</div>
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7);">O'zbekistonda</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Dashboard Preview Section - Images with Scroll Animation -->
-<section class="dashboard-overlay-section">
+<!-- SECTION 4: FEATURES - BLACK BG -->
+<section class="snap-section features-section bg-black">
     <div class="container">
-        <div class="dashboard-images-wrapper">
-            <!-- First Image - Static -->
-            <div class="dashboard-image dashboard-image-1">
-                <img src="{{ url_for('static', filename='images/1 (2).png') }}" alt="Dashboard 1" class="dashboard-img">
-            </div>
-            
-            <!-- Second Image - Slides from right on scroll -->
-            <div class="dashboard-image dashboard-image-2">
-                <img src="{{ url_for('static', filename='images/4 (2).png') }}" alt="Dashboard 2" class="dashboard-img">
-                    </div>
-                    
-            <!-- Third Image - Slides from right on scroll -->
-            <div class="dashboard-image dashboard-image-3">
-                <img src="{{ url_for('static', filename='images/last.png') }}" alt="Dashboard 3" class="dashboard-img">
-            </div>
+        <div class="section-header">
+            <span class="section-label">Imkoniyatlar</span>
+            <h2 class="section-title">
+                Enterprise darajadagi<br>
+                <span>AI yechimlar</span>
+            </h2>
         </div>
-    </div>
-</section>
-
-<!-- AI-Driven Features Section -->
-<section class="section">
-    <div class="container">
-        <div class="text-center mb-16">
-            <div class="features-label">IMKONIYATLAR</div>
-            <h2 class="section-title">AI bilan boshqariladigan <span class="gradient-text-animated">imkoniyatlar</span></h2>
-            <p class="section-subtitle">Ma'lumotlaringizning to'liq salohiyatini kengaytirilgan AI yechimlar bilan oching.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <!-- AI Workflow Automation -->
+        <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-workflow-list">
-                    <div class="workflow-item">
-                        <div class="workflow-icon">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                        </div>
-                        <span>Ma'lumotlarni kiriting</span>
-                    </div>
-                    <div class="workflow-item">
-                        <div class="workflow-icon">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                        </div>
-                        <span>AI Avtomatlashtirish</span>
-                    </div>
-                    <div class="workflow-item">
-                        <div class="workflow-icon">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
-                        <span>Tahlil qilish va optimallashtirish</span>
-                    </div>
-                </div>
-                <h3 class="feature-card-title">AI Workflow Avtomatlashtirish</h3>
-                <p class="feature-card-desc">
-                    Takrorlanuvchi va vaqt talab qiladigan vazifalarni bizning AI bilan boshqariladigan workflow avtomatlashtirish vositalarimiz bilan avtomatlashtiring.
-                </p>
-            </div>
-
-            <!-- Natural Language Processing (NLP) Engine -->
-            <div class="feature-card">
-                <div class="feature-chart">
-                    <svg class="w-full h-32" viewBox="0 0 200 100" preserveAspectRatio="none">
-                        <!-- Background bars -->
-                        <rect x="10" y="60" width="20" height="30" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <rect x="40" y="50" width="20" height="40" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <rect x="70" y="70" width="20" height="20" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <rect x="100" y="40" width="20" height="50" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <rect x="130" y="55" width="20" height="35" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <rect x="160" y="65" width="20" height="25" fill="rgba(148, 163, 184, 0.2)" rx="2"/>
-                        <!-- Line graph -->
-                        <polyline
-                            fill="none"
-                            stroke="rgb(59, 130, 246)"
-                            stroke-width="3"
-                            points="20,70 50,60 80,80 110,50 140,65 170,75"
-                        />
-                    </svg>
-                </div>
-                <h3 class="feature-card-title">Natural Language Processing (NLP) Engine</h3>
-                <p class="feature-card-desc">
-                    Takrorlanuvchi va vaqt talab qiladigan vazifalarni bizning AI bilan boshqariladigan workflow avtomatlashtirish vositalarimiz bilan avtomatlashtiring. Samaradorlikni oshiring.
-                </p>
-            </div>
-
-            <!-- Predictive Analytics -->
-            <div class="feature-card">
-                <div class="feature-graph">
-                    <svg class="w-full h-32" viewBox="0 0 200 100" preserveAspectRatio="none">
-                        <polyline
-                            fill="none"
-                            stroke="rgb(59, 130, 246)"
-                            stroke-width="3"
-                            points="0,80 40,40 80,20 120,30 160,15 200,25"
-                        />
-                        <text x="40" y="15" fill="rgb(59, 130, 246)" font-size="12" font-weight="bold">10k+</text>
-                        <text x="120" y="15" fill="rgb(59, 130, 246)" font-size="12" font-weight="bold">15k+</text>
-                    </svg>
-                </div>
-                <h3 class="feature-card-title">Bashoratli tahlil</h3>
-                <p class="feature-card-desc">
-                    Takrorlanuvchi va vaqt talab qiladigan vazifalarni bizning AI bilan boshqariladigan workflow avtomatlashtirish vositalarimiz bilan avtomatlashtiring.
-                </p>
-            </div>
-
-            <!-- Smart Data Visualization -->
-            <div class="feature-card">
-                <div class="feature-progress">
-                    <div class="progress-item">
-                        <div class="progress-label">Jarayon</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 100%; background: rgba(148, 163, 184, 0.3);"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-label">Optimallashtirish</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-label">Ma'lumotlar tahlili</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 40%; background: rgba(148, 163, 184, 0.3);"></div>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="feature-card-title">Aqlli ma'lumotlar vizualizatsiyasi</h3>
-                <p class="feature-card-desc">
-                    Takrorlanuvchi va vaqt talab qiladigan vazifalarni bizning AI bilan boshqariladigan workflow avtomatlashtirish vositalarimiz bilan avtomatlashtiring.
-                </p>
-            </div>
-
-            <!-- AI-Powered Decision-Making -->
-            <div class="feature-card">
-                <div class="feature-brain-icon">
-                    <svg class="w-16 h-16" viewBox="0 0 100 100" fill="none" stroke="rgb(59, 130, 246)" stroke-width="2">
-                        <!-- Brain shape -->
-                        <path d="M50 20 Q30 25 25 40 Q20 55 30 70 Q40 75 50 70 Q60 75 70 70 Q80 55 75 40 Q70 25 50 20" />
-                        <!-- Neural network nodes -->
-                        <circle cx="35" cy="45" r="3" fill="rgb(59, 130, 246)"/>
-                        <circle cx="50" cy="50" r="3" fill="rgb(59, 130, 246)"/>
-                        <circle cx="65" cy="45" r="3" fill="rgb(59, 130, 246)"/>
-                        <circle cx="40" cy="60" r="3" fill="rgb(59, 130, 246)"/>
-                        <circle cx="60" cy="60" r="3" fill="rgb(59, 130, 246)"/>
-                        <!-- Connections -->
-                        <line x1="35" y1="45" x2="50" y2="50" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                        <line x1="50" y1="50" x2="65" y2="45" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                        <line x1="35" y1="45" x2="40" y2="60" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                        <line x1="65" y1="45" x2="60" y2="60" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                        <line x1="50" y1="50" x2="40" y2="60" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                        <line x1="50" y1="50" x2="60" y2="60" stroke="rgb(59, 130, 246)" stroke-width="1"/>
-                    </svg>
-                </div>
-                <h3 class="feature-card-title">AI bilan boshqariladigan qaror qabul qilish</h3>
-                <p class="feature-card-desc">
-                    Bu imkoniyat katta hajmdagi ma'lumotlarni real vaqtda qayta ishlaydi, naqshlarni aniqlaydi, bashorat qiladi.
-                </p>
-            </div>
-
-            <!-- 6th Card - Placeholder -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
                 <h3 class="feature-card-title">Avtomatlashtirish</h3>
-                <p class="feature-card-desc">
-                    Takrorlanuvchi vazifalarni avtomatlashtirish
-                </p>
+                <p class="feature-card-desc">Takrorlanuvchi vazifalarni AI bilan avtomatlashtiring va vaqtingizni tejang.</p>
             </div>
-        </div>
-
-        <div class="text-center">
-            <a href="{{ url_for('features') }}" class="feature-cta-btn">
-                Barcha imkoniyatlarni ko'rish
-            </a>
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                <h3 class="feature-card-title">Tahlil</h3>
+                <p class="feature-card-desc">Ma'lumotlaringizni chuqur tahlil qiling va qarorlar qabul qiling.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                <h3 class="feature-card-title">Bashorat</h3>
+                <p class="feature-card-desc">Kelajakdagi trendlarni bashorat qiling va strategiya tuzing.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <h3 class="feature-card-title">Xavfsizlik</h3>
+                <p class="feature-card-desc">Enterprise darajadagi xavfsizlik va ma'lumotlar himoyasi.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                    </svg>
+                <h3 class="feature-card-title">Integratsiya</h3>
+                <p class="feature-card-desc">Mavjud tizimlaringiz bilan osongina integratsiya qiling.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                <h3 class="feature-card-title">Jamoa</h3>
+                <p class="feature-card-desc">Jamoangiz bilan hamkorlikda ishlash imkoniyati.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Stats Counter Section -->
-<section class="section">
+<!-- SECTION 5: HOW IT WORKS - WHITE BG -->
+<section class="snap-section bg-white">
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div class="text-center">
-                <div class="stats-counter counter-number" data-target="5000">0</div>
-                <p class="text-secondary mt-2">Faol foydalanuvchilar</p>
-            </div>
-            <div class="text-center">
-                <div class="stats-counter counter-number" data-target="15000">0</div>
-                <p class="text-secondary mt-2">Tahlil qilingan tranzaksiyalar</p>
-            </div>
-            <div class="text-center">
-                <div class="stats-counter counter-number" data-target="98">0</div>
-                <p class="text-secondary mt-2">% Mijozlar qoniqishi</p>
-            </div>
-            <div class="text-center">
-                <div class="stats-counter counter-number" data-target="24">0</div>
-                <p class="text-secondary mt-2">7 qo'llab-quvvatlash</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- How It Works Section -->
-<section class="section" id="how-it-works">
-    <div class="container">
-        <div class="how-it-works-header">
-            <div class="how-it-works-label-wrapper">
-                <div class="how-it-works-chiqiq how-it-works-chiqiq-right"></div>
-                <div class="how-it-works-label">QANDAY ISHLAYDI</div>
-                <div class="how-it-works-chiqiq how-it-works-chiqiq-left"></div>
-            </div>
-            <h2 class="how-it-works-title">
-                BalansAI qanday <span class="gradient-text-animated">ishlaydi</span>
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">Qanday ishlaydi</span>
+            <h2 class="section-title" style="color: var(--black);">
+                3 oddiy <span>qadam</span>
             </h2>
-            <p class="how-it-works-subtitle">
-                Oddiy qadamlar orqali AI integratsiyasi va biznes samaradorligini oshiring.
-            </p>
-                </div>
-        <div class="how-it-works-wrapper">
-            <div class="how-it-works-step-new">
-                <div class="step-number-new">01</div>
-                <h3 class="step-title-new">Ma'lumotlarni ulash</h3>
-                <p class="step-desc-new">
-                    Biznesingiz ma'lumotlarini CRM tizimlari, marketing platformalari yoki ma'lumotlar bazalaridan osongina ulang. Platformamiz siz allaqachon foydalanadigan vositalar bilan muammosiz integratsiyani qo'llab-quvvatlaydi.
-                </p>
+        </div>
+        <div class="how-grid" style="margin-top: 80px;">
+            <div class="how-step" style="text-align: left; border-left: 2px solid var(--blue); padding-left: 40px;">
+                <div class="step-number" style="color: var(--blue); opacity: 0.2;">01</div>
+                <h3 class="step-title" style="color: var(--black);">Ro'yxatdan o'ting</h3>
+                <p class="step-desc" style="color: rgba(0,0,0,0.6);">Bir necha daqiqada bepul hisob yarating va platformaga kiring. Hech qanday kredit karta talab qilinmaydi.</p>
             </div>
-
-            <div class="how-it-works-step-new">
-                <div class="step-number-new">02</div>
-                <h3 class="step-title-new">AI Tahlili</h3>
-                <p class="step-desc-new">
-                    Ma'lumotlaringiz ulangandan so'ng, BalansAI ning ilg'or AI algoritmlari darhol ma'lumotlarni qayta ishlaydi, tahlil qiladi va naqshlar hamda tushunchalarni aniqlaydi.
-                </p>
+            <div class="how-step" style="text-align: left; border-left: 2px solid var(--blue); padding-left: 40px;">
+                <div class="step-number" style="color: var(--blue); opacity: 0.2;">02</div>
+                <h3 class="step-title" style="color: var(--black);">Ma'lumot ulang</h3>
+                <p class="step-desc" style="color: rgba(0,0,0,0.6);">Biznesingiz ma'lumotlarini ulang yoki import qiling. Biz 50+ dan ortiq integratsiyalarni qo'llab-quvvatlaymiz.</p>
             </div>
-
-            <div class="how-it-works-step-new">
-                <div class="step-number-new">03</div>
-                <h3 class="step-title-new">Doimiy Optimallashtirish</h3>
-                <p class="step-desc-new">
-                    BalansAI ning adaptiv o'rganish tizimi modellarini doimiy ravishda takomillashtiradi, aniqlik va dolzarblikni oshiradi va yaxshiroq natijalar hamda ma'lumotli tavsiyalarni taqdim etadi.
-                </p>
+            <div class="how-step" style="text-align: left; border-left: 2px solid var(--blue); padding-left: 40px;">
+                <div class="step-number" style="color: var(--blue); opacity: 0.2;">03</div>
+                <h3 class="step-title" style="color: var(--black);">Natija oling</h3>
+                <p class="step-desc" style="color: rgba(0,0,0,0.6);">AI tahlillarini oling va biznesingizni rivojlantiring. Real vaqt rejimida qarorlar qabul qiling.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Integrations Section -->
-<section class="section" id="integrations">
+<!-- SECTION 6: USE CASES - BLACK BG -->
+<section class="snap-section bg-black">
     <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="integration-label-wrapper">
-                    <div class="integration-label">INTEGRATION</div>
-                    <div class="integration-label-line"></div>
-                </div>
-                <h2 class="integration-title">Seamlessly Integrate with Your Favorite <span class="integration-tools-text">Tools</span></h2>
-                <p class="integration-subtitle">
-                    Seamless Integration, Real-Time Insights, Continuous Improvement
-                </p>
-                <a href="{{ url_for('features') }}" class="integration-cta-btn">
-                    View All Integration
-                </a>
+        <div class="section-header">
+            <span class="section-label">Foydalanish holatlari</span>
+            <h2 class="section-title">
+                Har qanday <span>soha</span> uchun
+            </h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px;">
+            <div style="padding: 48px 32px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: all 0.3s;" class="use-case-card">
+                <svg style="width: 48px; height: 48px; margin: 0 auto 24px; color: var(--blue);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Moliya</h3>
+                <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Moliyaviy tahlil va bashorat qilish</p>
             </div>
-            <div class="integration-icons-grid">
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            <div style="padding: 48px 32px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: all 0.3s;" class="use-case-card">
+                <svg style="width: 48px; height: 48px; margin: 0 auto 24px; color: var(--blue);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">E-commerce</h3>
+                <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Sotuvlarni optimallashtirish</p>
+            </div>
+            <div style="padding: 48px 32px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: all 0.3s;" class="use-case-card">
+                <svg style="width: 48px; height: 48px; margin: 0 auto 24px; color: var(--blue);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                    </svg>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Logistika</h3>
+                <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Yetkazib berish optimizatsiyasi</p>
+            </div>
+            <div style="padding: 48px 32px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: all 0.3s;" class="use-case-card">
+                <svg style="width: 48px; height: 48px; margin: 0 auto 24px; color: var(--blue);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Sog'liqni saqlash</h3>
+                <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Tibbiy ma'lumotlar tahlili</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: INTEGRATIONS - WHITE BG -->
+<section class="snap-section bg-white">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">Integratsiyalar</span>
+            <h2 class="section-title" style="color: var(--black);">
+                Sevimli <span>vositalaringiz</span> bilan
+            </h2>
+            </div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; margin-top: 60px;">
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
                     </svg>
                 </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
                     </svg>
                 </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                 </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1 14.66 14.66 0 0 0-4.58 0 10.14 10.14 0 0 0-.53-1.1 16 16 0 0 0-4.13 1.3 17.33 17.33 0 0 0-3 11.59 16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83 3.39 3.39 0 0 0 .42-.33 11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84 12.41 12.41 0 0 0 1.08 1.78 16.44 16.44 0 0 0 5.06-2.59 17.22 17.22 0 0 0-3-11.59 16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.93 1.93 0 0 1 1.8 2 1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.92 1.92 0 0 1 1.8 2 1.92 1.92 0 0 1-1.8 2z"/>
                     </svg>
         </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/>
                         </svg>
                     </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            <div style="aspect-ratio: 1; background: var(--gray); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" class="integration-item">
+                <svg style="width: 40px; height: 40px; color: var(--black);" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
                         </svg>
-                </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <div class="integration-icon">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 40px; color: rgba(0,0,0,0.5); font-size: 14px;">va 50+ dan ortiq boshqa integratsiyalar</p>
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="section testimonials-section">
+<!-- SECTION 8: TESTIMONIALS - BLACK BG -->
+<section class="snap-section bg-black" style="padding: 120px 0;">
     <div class="container">
-        <div class="testimonials-header">
-            <div class="testimonials-label-wrapper">
-                <div class="testimonials-label-line"></div>
-                <div class="testimonials-label">FIKIRLAR</div>
-                <div class="testimonials-label-line"></div>
-            </div>
-            <h2 class="testimonials-title">
-                Mijozlarimiz <span class="gradient-text-animated">fikrlari</span>
+        <div class="section-header">
+            <span class="section-label">Fikrlar</span>
+            <h2 class="section-title">
+                Mijozlarimiz <span>nima deydi</span>
             </h2>
-            <p class="testimonials-subtitle">Haqiqiy hikoyalar, haqiqiy muvaffaqiyat: Bizning qoniqkan mijozlarimizdan eshiting.</p>
         </div>
-        
-        <div class="testimonials-container">
-            <div class="testimonials-rows-wrapper">
-                <!-- First Row -->
-                <div class="testimonials-track">
-                    <div class="testimonials-grid">
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">BalansAI bizning qaror qabul qilish jarayonimizni to'liq o'zgartirdi. Real vaqt tahlillari bizga raqobatchilarga nisbatan katta ustunlik beradi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Anvar Rahimov</div>
-                                    <div class="testimonial-role-new">Direktor, TechUz Solutions</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">AR</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Moliyaviy rejalashtirish va tahlil uchun eng yaxshi vosita. Biznes kengayishi bilan BalansAI ham bizga moslashib boradi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Dilnoza Karimova</div>
-                                    <div class="testimonial-role-new">Moliya direktori, Silk Trade</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">DK</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">AI yordami bilan biz xarajatlarimizni 30% ga kamaytirdik va daromadni 45% ga oshirdik. Bu ajoyib natija!</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Bobur Mahmudov</div>
-                                    <div class="testimonial-role-new">Asoschisi, Digital Grow</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">BM</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">BalansAI bizning qaror qabul qilish jarayonimizni to'liq o'zgartirdi. Real vaqt tahlillari bizga raqobatchilarga nisbatan katta ustunlik beradi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Anvar Rahimov</div>
-                                    <div class="testimonial-role-new">Direktor, TechUz Solutions</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">AR</div>
-                                </div>
-                            </div>
                 </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Moliyaviy rejalashtirish va tahlil uchun eng yaxshi vosita. Biznes kengayishi bilan BalansAI ham bizga moslashib boradi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Dilnoza Karimova</div>
-                                    <div class="testimonial-role-new">Moliya direktori, Silk Trade</div>
-                    </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">DK</div>
+    <div style="overflow: hidden; margin-top: 60px;">
+        <div class="testimonials-track">
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"BalansAI bizning qaror qabul qilish jarayonimizni to'liq o'zgartirdi. Real vaqt tahlillari bizga katta ustunlik beradi."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AR</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Anvar Rahimov</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">Direktor, TechUz</div>
                     </div>
                 </div>
             </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">AI yordami bilan biz xarajatlarimizni 30% ga kamaytirdik va daromadni 45% ga oshirdik. Bu ajoyib natija!</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Bobur Mahmudov</div>
-                                    <div class="testimonial-role-new">Asoschisi, Digital Grow</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">BM</div>
-                                </div>
-                </div>
-                    </div>
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"Moliyaviy rejalashtirish uchun eng yaxshi vosita. Biznes kengayishi bilan BalansAI ham bizga moslashib boradi."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DK</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Dilnoza Karimova</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">CFO, Silk Trade</div>
                     </div>
                 </div>
-                
-                <!-- Second Row -->
-                <div class="testimonials-track">
-                    <div class="testimonials-grid testimonials-grid-reverse">
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Platformaning intuitiv interfeysi va kuchli tahlil vositalari bizning jamoamizni juda ko'p vaqtni tejashga yordam berdi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Sardor Yunusov</div>
-                                    <div class="testimonial-role-new">Bosh direktor, Smart Retail</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">SY</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">BalansAI bilan ishlash juda oson. Bizning kichik biznesimiz uchun mukammal yechim. Barcha kerakli funksiyalar bir joyda.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Kamola Alimova</div>
-                                    <div class="testimonial-role-new">Egasi, Kamola Boutique</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">KA</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Qo'llab-quvvatlash xizmati a'lo darajada. Har qanday savolga tez javob olasiz. Bu juda muhim!</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Jasur Toshmatov</div>
-                                    <div class="testimonial-role-new">IT Menejer, Uzbek Express</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">JT</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Platformaning intuitiv interfeysi va kuchli tahlil vositalari bizning jamoamizni juda ko'p vaqtni tejashga yordam berdi.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Sardor Yunusov</div>
-                                    <div class="testimonial-role-new">Bosh direktor, Smart Retail</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">SY</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">BalansAI bilan ishlash juda oson. Bizning kichik biznesimiz uchun mukammal yechim. Barcha kerakli funksiyalar bir joyda.</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Kamola Alimova</div>
-                                    <div class="testimonial-role-new">Egasi, Kamola Boutique</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">KA</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card-new">
-                            <div class="testimonial-quote-icon">"</div>
-                            <p class="testimonial-text-new">Qo'llab-quvvatlash xizmati a'lo darajada. Har qanday savolga tez javob olasiz. Bu juda muhim!</p>
-                            <div class="testimonial-author-new">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name-new">Jasur Toshmatov</div>
-                                    <div class="testimonial-role-new">IT Menejer, Uzbek Express</div>
-                                </div>
-                                <div class="testimonial-avatar-new">
-                                    <div class="avatar-placeholder-new">JT</div>
             </div>
-                </div>
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"AI yordami bilan xarajatlarimizni 30% ga kamaytirdik va daromadni 45% ga oshirdik."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">BM</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Bobur Mahmudov</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">CEO, Digital Grow</div>
                     </div>
+                </div>
+            </div>
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"Platformaning intuitiv interfeysi va kuchli tahlil vositalari jamoamizga juda ko'p vaqt tejashga yordam berdi."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SY</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Sardor Yunusov</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">CTO, Smart Retail</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"BalansAI bizning qaror qabul qilish jarayonimizni to'liq o'zgartirdi. Real vaqt tahlillari bizga katta ustunlik beradi."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AR</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Anvar Rahimov</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">Direktor, TechUz</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="testimonial-text" style="color: var(--white);">"Moliyaviy rejalashtirish uchun eng yaxshi vosita. Biznes kengayishi bilan BalansAI ham bizga moslashib boradi."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DK</div>
+                    <div>
+                        <div class="author-name" style="color: var(--white);">Dilnoza Karimova</div>
+                        <div class="author-role" style="color: rgba(255,255,255,0.5);">CFO, Silk Trade</div>
                     </div>
                 </div>
             </div>
@@ -563,180 +371,124 @@
     </div>
 </section>
 
-<!-- Pricing Preview Section -->
-<section class="section">
+<!-- SECTION 9: PRICING - WHITE BG -->
+<section class="snap-section bg-white">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">Biznesingiz uchun to'g'ri <span class="gradient-text-animated">rejani</span> tanlang</h2>
-            <p class="section-subtitle">Oddiy rejalar, shaffof narxlar, yashirin to'lovlar yo'q.</p>
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">Tariflar</span>
+            <h2 class="section-title" style="color: var(--black);">
+                Oddiy va <span>shaffof</span> narxlar
+            </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="pricing-title">Bepul</h3>
-                    <div class="pricing-price">
-                        <span class="price-amount">$0</span>
-                    </div>
-                </div>
+        <div class="pricing-grid" style="margin-top: 60px;">
+            <div class="pricing-card" style="background: var(--gray); border-color: rgba(0,0,0,0.1);">
+                <div class="pricing-name" style="color: rgba(0,0,0,0.5);">Starter</div>
+                <div class="pricing-price" style="color: var(--black);">$0</div>
+                <div class="pricing-period" style="color: rgba(0,0,0,0.5);">Bepul</div>
                 <ul class="pricing-features">
-                    <li>Asosiy tahlil</li>
-                    <li>Cheklangan hisobotlar</li>
-                    <li>Jamiyat yordami</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Asosiy tahlil</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">5 ta loyiha</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Email qo'llab-quvvatlash</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">API kirish</li>
                 </ul>
-                <a href="{{ url_for('pricing') }}" class="pricing-btn">Bepul boshlash</a>
+                <a href="{{ url_for('pricing') }}" class="pricing-btn" style="color: var(--black); border-color: rgba(0,0,0,0.2);">Boshlash</a>
             </div>
             <div class="pricing-card featured">
-                <div class="pricing-badge">Eng mashhur</div>
-                <div class="pricing-header">
-                    <h3 class="pricing-title">Pro</h3>
-                    <div class="pricing-price">
-                        <span class="price-amount">$50</span>
-                        <span class="price-period">/oy</span>
-                    </div>
-                </div>
+                <div class="pricing-name">Professional</div>
+                <div class="pricing-price">$49</div>
+                <div class="pricing-period">oyiga</div>
                 <ul class="pricing-features">
                     <li>Kengaytirilgan tahlil</li>
-                    <li>Cheksiz hisobotlar</li>
-                    <li>Prioritet yordam</li>
-                    <li>Maxsus integratsiyalar</li>
+                    <li>Cheksiz loyihalar</li>
+                    <li>Prioritet qo'llab-quvvatlash</li>
+                    <li>API + Webhook</li>
+                    <li>Maxsus hisobotlar</li>
                 </ul>
-                <a href="{{ url_for('pricing') }}" class="pricing-btn primary">Bepul sinab ko'rish</a>
+                <a href="{{ url_for('pricing') }}" class="pricing-btn">Tanlash</a>
             </div>
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="pricing-title">Maxsus</h3>
-                    <div class="pricing-price">
-                        <span class="price-amount">Maxsus...</span>
-                    </div>
-                </div>
+            <div class="pricing-card" style="background: var(--gray); border-color: rgba(0,0,0,0.1);">
+                <div class="pricing-name" style="color: rgba(0,0,0,0.5);">Enterprise</div>
+                <div class="pricing-price" style="color: var(--black);">Maxsus</div>
+                <div class="pricing-period" style="color: rgba(0,0,0,0.5);">Bog'laning</div>
                 <ul class="pricing-features">
-                    <li>Korxona darajasidagi xavfsizlik</li>
-                    <li>Maxsus hisob menejeri</li>
-                    <li>On-premise o'rnatish</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Barcha imkoniyatlar</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Maxsus integratsiya</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">24/7 qo'llab-quvvatlash</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">On-premise o'rnatish</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">SLA kafolati</li>
                 </ul>
-                <a href="{{ url_for('contact') }}" class="pricing-btn">Savdo bilan bog'lanish</a>
+                <a href="{{ url_for('contact') }}" class="pricing-btn" style="color: var(--black); border-color: rgba(0,0,0,0.2);">Bog'lanish</a>
             </div>
-        </div>
-        <div class="text-center">
-            <a href="{{ url_for('pricing') }}" class="text-accent-blue hover:underline">Barcha rejalarni ko'rish →</a>
         </div>
     </div>
 </section>
 
-<!-- FAQ Preview Section -->
-<section class="section bg-secondary">
+<!-- SECTION 10: FAQ - BLACK BG -->
+<section class="snap-section bg-black">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">Tez-tez so'raladigan <span class="gradient-text-animated">savollar</span></h2>
-            <p class="section-subtitle">BalansAI haqidagi eng keng tarqalgan savollar va javoblar.</p>
+        <div class="section-header">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">
+                Tez-tez <span>so'raladigan</span> savollar
+            </h2>
         </div>
-        <div class="max-w-3xl mx-auto">
-            <div class="faq-item">
-                <div class="faq-question">
+        <div class="faq-list" style="margin-top: 60px;">
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
                     <span>BalansAI nima?</span>
                     <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div class="faq-answer">
-                    <p>BalansAI - bu biznesingiz uchun AI yordamchi platforma. U ma'lumotlarni tahlil qilish, bashorat qilish va qarorlar qabul qilishda yordam beradi.</p>
+                    <p style="color: rgba(255,255,255,0.6);">BalansAI - O'zbekistondagi eng yirik AI platforma. Biznesingiz uchun sun'iy intellekt yordamida ma'lumotlarni tahlil qilish, bashorat qilish va qarorlar qabul qilishda yordam beradi.</p>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>BalansAI biznesimga qanday foyda keltiradi?</span>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Qanday boshlash mumkin?</span>
                     <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                 </div>
                 <div class="faq-answer">
-                    <p>BalansAI sizga ma'lumotlar asosida qarorlar qabul qilish, jarayonlarni optimallashtirish va kelajakdagi trendlarni bashorat qilish imkonini beradi.</p>
+                    <p style="color: rgba(255,255,255,0.6);">Ro'yxatdan o'ting, bepul rejani tanlang va bir necha daqiqada boshlang. Hech qanday kredit karta talab qilinmaydi.</p>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>BalansAI kichik bizneslar uchun mosmi?</span>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Ma'lumotlarim xavfsizmi?</span>
                     <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Ha, BalansAI har qanday o'lchamdagi bizneslar uchun mos. Bepul reja kichik bizneslar uchun ajoyib boshlanish nuqtasidir.</p>
+                    <p style="color: rgba(255,255,255,0.6);">Ha, biz enterprise darajadagi xavfsizlik standartlaridan foydalanamiz. Barcha ma'lumotlar shifrlangan va himoyalangan.</p>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>BalansAI bilan qanday boshlash mumkin?</span>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Qo'llab-quvvatlash qanday?</span>
                     <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Ro'yxatdan o'ting, bepul rejani tanlang va bir necha daqiqada boshlang. Hech qanday kredit karta talab qilinmaydi.</p>
+                    <p style="color: rgba(255,255,255,0.6);">Biz email, chat va telefon orqali qo'llab-quvvatlash xizmatini taqdim etamiz. Pro va Enterprise rejalarda 24/7 qo'llab-quvvatlash mavjud.</p>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-12">
-            <a href="{{ url_for('faq') }}" class="text-accent-blue hover:underline">Barcha savollarni ko'rish →</a>
         </div>
     </div>
 </section>
 
-<!-- Blog/Insights Section -->
-<section class="section">
+<!-- SECTION 11: CTA - BLUE BG -->
+<section class="snap-section cta-section bg-blue">
     <div class="container">
-        <div class="text-center mb-16">
-            <h2 class="section-title">BalansAI <span class="gradient-text-animated">Insights</span></h2>
-            <p class="section-subtitle">So'nggi yangiliklar, maqolalar va trendlar bilan yangilanishda qoling.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-image-placeholder"></div>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-date">26 Okt, 2023</div>
-                    <h3 class="blog-title">Bashoratli tahlil aqlli biznes qarorlarini qanday yaxshilaydi</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-image-placeholder"></div>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-date">26 Okt, 2023</div>
-                    <h3 class="blog-title">Yangi bashoratli tahlil aqlli biznes qarorlarini yaxshilaydi</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-image-placeholder"></div>
-                </div>
-                <div class="blog-content">
-                    <div class="blog-date">26 Okt, 2023</div>
-                    <h3 class="blog-title">AI bilan workflow avtomatlashtirishning kelajagi</h3>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-12">
-            <a href="#" class="hero-cta-btn">Barcha maqolalarni ko'rish</a>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="section accent-gradient">
-    <div class="container text-center max-w-3xl" style="position: relative; z-index: 1;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Biznesingizni AI bilan avtomatlashtirishga <span class="gradient-text-animated">tayyormisiz?</span>
-        </h2>
-        <p class="text-lg mb-8" style="color: rgba(255, 255, 255, 0.9);">
-            Minglab bizneslar allaqachon BalansAI bilan o'z operatsiyalarini o'zgartirmoqda.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ url_for('pricing') }}" class="btn bg-white text-accent-blue hover:bg-gray-100 btn-large" style="border: none;">
-                Bugun boshlash
-            </a>
+        <h2 class="cta-title">Bugun boshlang</h2>
+        <p class="cta-desc">Minglab bizneslar allaqachon BalansAI bilan o'z operatsiyalarini o'zgartirmoqda. Siz ham qo'shiling!</p>
+        <div style="display: flex; gap: 16px; justify-content: center;">
+            <a href="{{ url_for('pricing') }}" class="cta-btn">Bepul boshlash</a>
+            <a href="{{ url_for('contact') }}" class="cta-btn" style="background: transparent; border: 1px solid var(--white); color: var(--white);">Bog'lanish</a>
         </div>
     </div>
 </section>

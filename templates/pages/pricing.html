@@ -1,280 +1,236 @@
 {% extends 'base.html' %}
 
-{% block title %}Tariflar - BalansAI.uz{% endblock %}
-{% block description %}Balans AI tariflar va narxlar. Free, Basic va Premium tariflar. O'zingizga mos tarifni tanlang va bugun boshlang.{% endblock %}
+{% block title %}Tariflar - BalansAI{% endblock %}
+{% block description %}BalansAI tariflar va narxlar. Starter, Professional va Enterprise tariflar.{% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-gray-50 to-white py-20">
+<!-- HERO - BLACK BG -->
+<section class="snap-section hero-section bg-black">
     <div class="container">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 fade-on-scroll">
-                O'zingizga mos tarifni tanlang
+        <div class="hero-content" style="max-width: 800px;">
+            <div class="hero-label">Tariflar</div>
+            <h1 class="hero-title" style="font-size: clamp(48px, 8vw, 100px);">
+                Oddiy<br>
+                <span>narxlar</span>
             </h1>
-            <p class="text-xl text-gray-600 fade-on-scroll stagger-1">
-                Har bir biznes uchun ideal yechim. 7 kunlik bepul sinov davri
+            <p class="hero-description">
+                Shaffof narxlar, yashirin to'lovlarsiz. O'zingizga mos tarifni tanlang.
             </p>
         </div>
     </div>
 </section>
 
-<!-- Pricing Cards -->
-<section class="section bg-white">
+<!-- PRICING CARDS - WHITE BG -->
+<section class="snap-section bg-white">
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Free Plan -->
-            <div class="card pricing-card fade-on-scroll">
-                <div class="text-center border-b border-gray-200 pb-6 mb-6">
-                    <h3 class="text-2xl font-bold mb-2">Free</h3>
-                    <div class="text-5xl font-bold mb-2">0<span class="text-lg text-gray-600"> so'm</span></div>
-                    <p class="text-gray-600">/ oyiga</p>
-                </div>
-
-                <div class="mb-8">
-                    <p class="text-gray-600 mb-6">Kichik bizneslar va startuplar uchun</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Asosiy AI yordamchi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Oddiy daromad/xarajat tahlili</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Oylik hisobotlar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Email qo'llab-quvvatlash</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <svg class="w-6 h-6 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Kengaytirilgan AI tavsiyalar</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <svg class="w-6 h-6 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Moliyaviy prognozlar</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <svg class="w-6 h-6 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Priority qo'llab-quvvatlash</span>
-                        </li>
+        <div class="pricing-grid" style="max-width: 1200px; margin: 0 auto;">
+            <!-- Starter -->
+            <div class="pricing-card" style="background: var(--gray); border-color: rgba(0,0,0,0.1);">
+                <div class="pricing-name" style="color: rgba(0,0,0,0.5);">Starter</div>
+                <div class="pricing-price" style="color: var(--black);">$0</div>
+                <div class="pricing-period" style="color: rgba(0,0,0,0.5);">Bepul</div>
+                <ul class="pricing-features">
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Asosiy AI yordamchi</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">5 ta loyiha</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Oylik hisobotlar</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Email qo'llab-quvvatlash</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">API kirish</li>
                     </ul>
-                </div>
-
-                <a href="#" class="btn btn-secondary w-full">
-                    Boshlash
-                </a>
+                <a href="#" class="pricing-btn" style="color: var(--black); border-color: rgba(0,0,0,0.2);">Boshlash</a>
             </div>
 
-            <!-- Basic Plan (Popular) -->
-            <div class="card pricing-card featured border-2 border-primary relative fade-on-scroll stagger-1 shadow-xl scale-105">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-6 py-1 rounded-full text-sm font-medium shadow-lg animate-pulse-glow">
-                    Eng mashhur
-                </div>
-
-                <div class="text-center border-b border-gray-200 pb-6 mb-6">
-                    <h3 class="text-2xl font-bold mb-2">Basic</h3>
-                    <div class="text-5xl font-bold mb-2 gradient-text-animated">99,000<span class="text-lg text-gray-600"> so'm</span></div>
-                    <p class="text-gray-600">/ oyiga</p>
-                </div>
-
-                <div class="mb-8">
-                    <p class="text-gray-600 mb-6">O'rtacha bizneslar uchun ideal</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700"><strong>Free'dagi barcha imkoniyatlar</strong></span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">To'liq AI yordamchi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Kengaytirilgan tahlil va grafiklar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Haftalik/kunlik hisobotlar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Moliyaviy tavsiyalar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">PDF/Excel eksport</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <svg class="w-6 h-6 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Priority qo'llab-quvvatlash</span>
-                        </li>
+            <!-- Professional -->
+            <div class="pricing-card featured">
+                <div class="pricing-name">Professional</div>
+                <div class="pricing-price">$49</div>
+                <div class="pricing-period">oyiga</div>
+                <ul class="pricing-features">
+                    <li>Starter'dagi barcha imkoniyatlar</li>
+                    <li>Cheksiz loyihalar</li>
+                    <li>Kengaytirilgan tahlil</li>
+                    <li>Haftalik/kunlik hisobotlar</li>
+                    <li>Prioritet qo'llab-quvvatlash</li>
+                    <li>API + Webhook</li>
+                    <li>Maxsus hisobotlar</li>
                     </ul>
-                </div>
-
-                <a href="#" class="btn btn-primary w-full btn-modern">
-                    Boshlash
-                </a>
+                <a href="#" class="pricing-btn">Tanlash</a>
             </div>
 
-            <!-- Premium Plan -->
-            <div class="card pricing-card fade-on-scroll stagger-2">
-                <div class="text-center border-b border-gray-200 pb-6 mb-6">
-                    <h3 class="text-2xl font-bold mb-2">Premium</h3>
-                    <div class="text-5xl font-bold mb-2 gradient-text-animated">299,000<span class="text-lg text-gray-600"> so'm</span></div>
-                    <p class="text-gray-600">/ oyiga</p>
-                </div>
-
-                <div class="mb-8">
-                    <p class="text-gray-600 mb-6">Katta bizneslar uchun to'liq yechim</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700"><strong>Basic'dagi barcha imkoniyatlar</strong></span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Premium AI yordamchi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Individual tavsiyalar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Moliyaviy prognozlar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Unlimited foydalanuvchilar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">API integratsiya</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Priority qo'llab-quvvatlash (24/7)</span>
-                        </li>
+            <!-- Enterprise -->
+            <div class="pricing-card" style="background: var(--gray); border-color: rgba(0,0,0,0.1);">
+                <div class="pricing-name" style="color: rgba(0,0,0,0.5);">Enterprise</div>
+                <div class="pricing-price" style="color: var(--black);">Maxsus</div>
+                <div class="pricing-period" style="color: rgba(0,0,0,0.5);">Bog'laning</div>
+                <ul class="pricing-features">
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Professional'dagi barcha imkoniyatlar</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Unlimited foydalanuvchilar</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">Maxsus integratsiya</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">24/7 qo'llab-quvvatlash</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">On-premise o'rnatish</li>
+                    <li style="color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.1);">SLA kafolati</li>
                     </ul>
-                </div>
-
-                <a href="#" class="btn btn-secondary w-full btn-modern">
-                    Boshlash
-                </a>
-            </div>
-        </div>
-
-        <!-- Payment Methods -->
-        <div class="mt-16 text-center fade-on-scroll">
-            <p class="text-gray-600 mb-6">To'lov usullari:</p>
-            <div class="flex justify-center items-center space-x-8 flex-wrap gap-4">
-                <div class="bg-white px-6 py-3 rounded-lg border border-gray-200 font-medium">Payme</div>
-                <div class="bg-white px-6 py-3 rounded-lg border border-gray-200 font-medium">Click</div>
-                <div class="bg-white px-6 py-3 rounded-lg border border-gray-200 font-medium">Uzum</div>
-                <div class="bg-white px-6 py-3 rounded-lg border border-gray-200 font-medium">Humo</div>
+                <a href="{{ url_for('contact') }}" class="pricing-btn" style="color: var(--black); border-color: rgba(0,0,0,0.2);">Bog'lanish</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FAQ Section -->
-<section class="section bg-gray-50">
-    <div class="container max-w-3xl">
-        <div class="text-center mb-12 fade-on-scroll">
-            <h2 class="section-title">Tez-tez beriladigan savollar</h2>
-        </div>
-
-        <div class="space-y-4">
-            <div class="card fade-on-scroll">
-                <h3 class="font-bold text-lg mb-2">Qanday to'lov qilaman?</h3>
-                <p class="text-gray-600">
-                    Ro'yxatdan o'tganingizdan keyin, tarifni tanlab, Payme, Click, Uzum yoki Humo orqali to'lov qilishingiz mumkin.
-                </p>
+<!-- COMPARISON - BLACK BG -->
+<section class="snap-section bg-black">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Taqqoslash</span>
+            <h2 class="section-title">
+                Tariflarni <span>solishtiring</span>
+            </h2>
             </div>
-
-            <div class="card fade-on-scroll stagger-1">
-                <h3 class="font-bold text-lg mb-2">Bekor qilsam nima bo'ladi?</h3>
-                <p class="text-gray-600">
-                    Istalgan vaqt tarifni bekor qilishingiz mumkin. Hisobingiz oxirgi to'lov sanasigacha faol bo'ladi.
-                </p>
-            </div>
-
-            <div class="card fade-on-scroll stagger-2">
-                <h3 class="font-bold text-lg mb-2">Tarifni o'zgartirish mumkinmi?</h3>
-                <p class="text-gray-600">
-                    Ha, istalgan vaqt tarifni yangilash yoki pasaytirishingiz mumkin. Farq keyingi to'lovda hisobga olinadi.
-                </p>
-            </div>
-
-            <div class="card fade-on-scroll stagger-3">
-                <h3 class="font-bold text-lg mb-2">Chegirma bormi?</h3>
-                <p class="text-gray-600">
-                    Ha, 6 oylik to'lov uchun 10%, yillik to'lov uchun 20% chegirma bor.
-                </p>
-            </div>
+        <div style="max-width: 1000px; margin: 60px auto 0; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-weight: 500;">Imkoniyat</th>
+                        <th style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--white); font-weight: 600;">Starter</th>
+                        <th style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--blue); font-weight: 600;">Professional</th>
+                        <th style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--white); font-weight: 600;">Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">AI Yordamchi</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">Asosiy</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--blue);">To'liq</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">Premium</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">Loyihalar</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">5</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--blue);">Cheksiz</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">Cheksiz</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">Foydalanuvchilar</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">1</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--blue);">5</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">Cheksiz</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">API</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">✓</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--blue);">✓</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">✓</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7);">Qo'llab-quvvatlash</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">Email</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--blue);">Prioritet</td>
+                        <td style="text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white);">24/7</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; color: rgba(255,255,255,0.7);">SLA</td>
+                        <td style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">—</td>
+                        <td style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">—</td>
+                        <td style="text-align: center; padding: 20px; color: var(--white);">✓</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="section bg-gradient-to-br from-primary to-primary-dark text-white">
-    <div class="container text-center max-w-3xl fade-on-scroll">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-            Hali savolingiz bormi?
-        </h2>
-        <p class="text-xl mb-8 text-white/90">
-            Biz sizga yordam berishga tayyormiz
+<!-- PAYMENT METHODS - WHITE BG -->
+<section class="snap-section bg-white">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label" style="color: var(--blue);">To'lov</span>
+            <h2 class="section-title" style="color: var(--black);">
+                Qulay <span>to'lov usullari</span>
+            </h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 800px; margin: 60px auto 0;">
+            <div style="background: var(--gray); padding: 32px; text-align: center;">
+                <div style="font-size: 24px; font-weight: 600; color: var(--black);">Payme</div>
+            </div>
+            <div style="background: var(--gray); padding: 32px; text-align: center;">
+                <div style="font-size: 24px; font-weight: 600; color: var(--black);">Click</div>
+            </div>
+            <div style="background: var(--gray); padding: 32px; text-align: center;">
+                <div style="font-size: 24px; font-weight: 600; color: var(--black);">Uzum</div>
+            </div>
+            <div style="background: var(--gray); padding: 32px; text-align: center;">
+                <div style="font-size: 24px; font-weight: 600; color: var(--black);">Humo</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; color: rgba(0,0,0,0.5);">
+            6 oylik to'lov uchun 10%, yillik to'lov uchun 20% chegirma
         </p>
-        <a href="{{ url_for('contact') }}" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-medium inline-block transition-colors">
-            Bog'lanish
-        </a>
+    </div>
+</section>
+
+<!-- FAQ - BLACK BG -->
+<section class="snap-section bg-black">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">
+                Tez-tez <span>so'raladigan</span> savollar
+            </h2>
+        </div>
+        <div class="faq-list" style="margin-top: 60px;">
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Qanday to'lov qilaman?</span>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p style="color: rgba(255,255,255,0.6);">Ro'yxatdan o'tganingizdan keyin, tarifni tanlab, Payme, Click, Uzum yoki Humo orqali to'lov qilishingiz mumkin.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Bekor qilsam nima bo'ladi?</span>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p style="color: rgba(255,255,255,0.6);">Istalgan vaqt tarifni bekor qilishingiz mumkin. Hisobingiz oxirgi to'lov sanasigacha faol bo'ladi.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Tarifni o'zgartirish mumkinmi?</span>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p style="color: rgba(255,255,255,0.6);">Ha, istalgan vaqt tarifni yangilash yoki pasaytirishingiz mumkin. Farq keyingi to'lovda hisobga olinadi.</p>
+                </div>
+            </div>
+            <div class="faq-item" style="border-color: rgba(255,255,255,0.1);">
+                <div class="faq-question" style="color: var(--white);">
+                    <span>Bepul sinov davri bormi?</span>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p style="color: rgba(255,255,255,0.6);">Ha, Professional tarif uchun 7 kunlik bepul sinov davri mavjud. Kredit karta talab qilinmaydi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA - BLUE BG -->
+<section class="snap-section cta-section bg-blue">
+    <div class="container">
+        <h2 class="cta-title">Hali savolingiz bormi?</h2>
+        <p class="cta-desc">Biz sizga yordam berishga tayyormiz. Bog'laning va bepul konsultatsiya oling.</p>
+        <a href="{{ url_for('contact') }}" class="cta-btn">Bog'lanish</a>
     </div>
 </section>
 

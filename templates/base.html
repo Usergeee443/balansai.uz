@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- SEO Meta Tags -->
-    <title>{% block title %}BalansAI.uz - AI yordamchi biznesingiz uchun{% endblock %}</title>
-    <meta name="description" content="{% block description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi. Daromad va xarajatlarni tahlil qilish, moliyaviy rejalashtirish va biznes boshqaruvini avtomatlashtirishga yordam beradi.{% endblock %}">
+    <title>{% block title %}BalansAI - O'zbekistonning #1 AI Platformasi{% endblock %}</title>
+    <meta name="description" content="{% block description %}BalansAI - O'zbekistondagi eng yirik AI platforma. Sun'iy intellekt yordamida biznesingizni avtomatlashtiring.{% endblock %}">
     <meta name="keywords" content="Balans AI, AI yordamchi, biznes AI, moliyaviy AI, O'zbekiston AI, biznes tahlil, daromad tahlili">
     <meta name="author" content="BalansAI.uz">
     <meta name="robots" content="index, follow">
@@ -16,52 +16,31 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:title" content="{% block og_title %}BalansAI.uz - AI yordamchi biznesingiz uchun{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Balans AI - O'zbekistondagi birinchi AI biznes yordamchi{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}BalansAI - O'zbekistonning #1 AI Platformasi{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}O'zbekistondagi eng yirik AI platforma{% endblock %}">
     <meta property="og:image" content="{{ url_for('static', filename='images/og-image.jpg', _external=True) }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ request.url }}">
-    <meta property="twitter:title" content="{% block twitter_title %}BalansAI.uz{% endblock %}">
-    <meta property="twitter:description" content="{% block twitter_description %}AI yordamchi biznesingiz uchun{% endblock %}">
+    <meta property="twitter:title" content="{% block twitter_title %}BalansAI{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}O'zbekistonning #1 AI Platformasi{% endblock %}">
     <meta property="twitter:image" content="{{ url_for('static', filename='images/og-image.jpg', _external=True) }}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Outfit (Minimal & Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563EB',
-                        'primary-dark': '#1e40af',
-                        'balans-black': '#0F172A',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-
     {% block extra_head %}{% endblock %}
 </head>
-<body class="font-sans antialiased" style="background: var(--bg-dark);">
+<body class="font-sans antialiased">
     <!-- Navbar -->
     {% include 'components/navbar.html' %}
 
@@ -70,7 +49,7 @@
         {% if messages %}
             <div class="fixed top-20 right-4 z-50 space-y-2" style="z-index: 9999;">
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}" style="max-width: 24rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);">
+                    <div class="alert alert-{{ category }}" style="max-width: 24rem;">
                         {{ message }}
                     </div>
                 {% endfor %}
@@ -79,7 +58,7 @@
     {% endwith %}
 
     <!-- Main Content -->
-    <main class="pt-24" style="position: relative; z-index: 1;">
+    <main>
         {% block content %}{% endblock %}
     </main>
 
